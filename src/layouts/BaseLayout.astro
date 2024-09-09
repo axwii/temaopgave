@@ -12,7 +12,18 @@ const { title = "" } = Astro.props;
     <title>{title} — AskExperts</title>
   </head>
   <body>
-    <!-- <Header /> -->
+    <header>
+      <div class="Header">
+        <h1 class="logo">AskExperts</h1>
+        <ul>
+          <li><a href="">Home</a></li>
+          <li><a href="">Case Study</a></li>
+          <li><a href="">Team</a></li>
+          <li><a href="">About</a></li>
+        </ul>
+        <button>Login</button>
+      </div>
+    </header>
     <main>
       <slot />
     </main>
@@ -30,6 +41,51 @@ const { title = "" } = Astro.props;
 </html>
 
 <style>
+  header {
+    background: rgba(27, 27, 27, 0.91);
+  }
+
+  .Header {
+    margin: auto;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 25px;
+    button {
+      border-radius: 20px;
+      background: #ffcc4a;
+      align-self: center;
+      color: #181818;
+      font-family: Lato;
+      font-size: 17.728px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 160%;
+    }
+    h1 {
+      align-self: center;
+    }
+    ul {
+      display: flex;
+      list-style: none;
+      padding-inline-start: 0px;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      li {
+        margin: 0 20px 0 20px;
+        font-family: Lato;
+        font-size: 17.728px;
+        font-style: normal;
+        a {
+          text-decoration: none;
+          color: #fff;
+        }
+      }
+    }
+  }
+
   footer {
     display: grid;
     place-items: center;
@@ -60,5 +116,6 @@ const { title = "" } = Astro.props;
     font-size: 30px;
     font-style: normal;
     font-weight: 600;
+    line-height: 105%;
   }
 </style>
