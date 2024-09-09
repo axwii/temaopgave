@@ -4,7 +4,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import EmployeeSection from "../components/EmployeeSection.astro";
 
 const employeeData = await fetch(
-  "https://raw.githubusercontent.com/axwii/frontend-design/blob/main/resources/json/employees.json"
+  "https://raw.githubusercontent.com/axwii/frontend-design/main/resources/json/employees.json"
 ).then((res) => res.json());
 
 const firstThreeEmployees = employeeData.slice(0, 3);
