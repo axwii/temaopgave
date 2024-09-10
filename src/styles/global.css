@@ -2,6 +2,7 @@
 
 @import url("./reset.css") layer(reset);
 @import url("./overrides.css") layer(overrides);
+@import url("https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&family=Lato:wght@400;700&display=swap");
 
 @layer global {
   :root {
@@ -16,7 +17,6 @@
     --gray-700: #374151;
     --gray-800: #1f2937;
     --gray-900: #111827;
-
 
     --step-0: clamp(1rem, 0.9rem + 1vw, 1.125rem); /* Base body text */
     --step-1: clamp(1.25rem, 1.15rem + 1vw, 1.5rem); /* H4 and lead text */
@@ -39,6 +39,7 @@
   h4,
   h5,
   h6 {
+    font-family: "Cabin", sans-serif;
     color: #181818; /* Heading color */
     line-height: 1.125;
   }
@@ -68,6 +69,7 @@
   }
 
   p {
+    font-family: "Lato", sans-serif;
     font-size: var(--step-0); /* Corresponds to 16px on desktop */
     line-height: 147.5%; /* 23.6px */
   }
