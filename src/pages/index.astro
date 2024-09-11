@@ -5,6 +5,7 @@ import EmployeeSection from "../components/EmployeeSection.astro";
 import Newsletter from "../components/Newsletter.astro";
 import Button from "../components/Button.astro";
 import Label from "../components/Label.astro";
+import Hero from "../components/Hero.astro";
 
 const employeeData = await fetch(
   "https://raw.githubusercontent.com/axwii/frontend-design/main/resources/json/employees.json"
@@ -14,6 +15,7 @@ const firstThreeEmployees = employeeData.slice(0, 3);
 ---
 
 <BaseLayout title="Home">
+  <Hero label="team" image="src/assets/images/theConsultorsHero.png">The Consultors</Hero>
   <article>
     <h1>Welcome to AskExperts</h1>
     <p>
