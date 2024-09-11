@@ -1,0 +1,46 @@
+---
+const { theme = "primary" } = Astro.props;
+---
+
+<button data-theme={theme}>
+  <slot />
+</button>
+
+<style>
+  @layer components {
+    [data-theme="secondary"] {
+      --bg-button: #FFCC4A;
+      --text-button: #181818;
+      --bg-button-hover: #181818;
+      --text-button-hover: #fff;
+    }
+
+    [data-theme="tertiary"] {
+      --bg-button: #fff;
+      --text-button: #181818;
+      --bg-button-hover: #181818;
+      --text-button-hover: #fff;
+    }
+
+    button {
+      --bg-button: #181818;
+      --text-button: #fff;
+      --bg-button-hover: #fff;
+      --text-button-hover: #181818;
+      padding: 2rem;
+      color: var(--text-button);
+      background: var(--bg-button);
+      border: none;
+      border-radius: 50px;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: var(--bg-button-hover);
+      color: var(--text-button-hover);
+    }
+  }
+</style>
