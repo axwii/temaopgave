@@ -27,15 +27,14 @@ const { theme = "primary" } = Astro.props;
       --text-button: #fff;
       --bg-button-hover: #fff;
       --text-button-hover: #181818;
-      padding: 2rem;
       color: var(--text-button);
       background: var(--bg-button);
+      transition: background-color 0.3s ease;
       border: none;
       border-radius: 50px;
       padding: 0.75rem 1.5rem;
-      font-size: 1rem;
+      font-size: 18px;
       cursor: pointer;
-      transition: background-color 0.3s ease;
     }
 
     button:hover {
