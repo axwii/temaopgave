@@ -1,0 +1,35 @@
+---
+const { color = "yellow" } = Astro.props;
+---
+
+<p data-theme={color}><slot /></p>
+
+<style>
+  @layer components {
+    [data-theme="green"] {
+      --bg-label: #4EAF4E;
+      --text-label: #fff;
+    }
+
+    [data-theme="white"] {
+      --bg-label: #fff;
+      --text-label: #181818;
+    }
+
+    p {
+      --bg-label: #ffcc4a;
+      --text-label: #181818;
+      display: inline-flex;
+      padding: 0px 15px;
+      align-items: flex-start;
+      gap: 10px;
+      border-radius: 20px;
+      background: var(--bg-label);
+      color: var(--text-label);
+      font-size: 16px;
+      line-height: 147.5%; /* 23.6px */
+      letter-spacing: 2.32px;
+      text-transform: uppercase;
+    }
+  }
+</style>

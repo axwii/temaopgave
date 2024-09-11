@@ -4,6 +4,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import EmployeeSection from "../components/EmployeeSection.astro";
 import Newsletter from "../components/Newsletter.astro";
 import Button from "../components/Button.astro";
+import Label from "../components/Label.astro";
 
 const employeeData = await fetch(
   "https://raw.githubusercontent.com/axwii/frontend-design/main/resources/json/employees.json"
@@ -24,6 +25,11 @@ const firstThreeEmployees = employeeData.slice(0, 3);
   <Button theme="">Get Started Primary</Button>
   <Button theme="secondary">Get Started Secondary</Button>
   <Button theme="tertiary">Get Started Tertiary</Button>
+  <Label>Services</Label>
+  <Label color="yellow">Services</Label>
+  <Label color="green">Services</Label>
+  <Label color="white">Services</Label>
+
   <EmployeeSection data={firstThreeEmployees} />
   <EmployeeSection data={employeeData} theme="dark" />
   <Newsletter />
