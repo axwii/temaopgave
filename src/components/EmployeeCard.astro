@@ -15,8 +15,10 @@ if (!images[img])
 ---
 
 <article>
-  <Image src={images[img]()} alt={name} />
-  <h3>{title}</h3>
+  <div class="image-container">
+    <Image src={images[img]()} alt={name} />
+    <h3>{title}</h3>
+  </div>
   <h2>{name}</h2>
   <p>{description}</p>
   <span class="icons">
@@ -29,16 +31,28 @@ if (!images[img])
 <style>
   @layer components {
     article {
+      margin-top: 43px;
+      margin-bottom: 37px;
       --gap: 0;
       justify-items: center;
-      background: aliceblue;
     }
 
-    img {
+    .image-container {
+      position: relative;
+      width: 100%;
+    }
+
+    .image-container img {
       border-radius: 20px;
+      width: 100%;
+      height: auto;
     }
 
-    h3 {
+    .image-container h3 {
+      position: absolute;
+      bottom: 20px;
+      right: 10px;
+      z-index: 1;
       padding: 4px 21px;
       border-radius: 29px;
       font-size: 16px;
@@ -47,11 +61,22 @@ if (!images[img])
       color: #fff;
     }
 
+    article:hover .image-container h3 {
+      background: #ffcc4a;
+      color: #181818;
+    }
+
+    h2 {
+      text-align: center;
+      --flow-space: 25px;
+    }
+
     p {
       text-align: center;
     }
 
     .icons {
+      margin-top: 27px;
       display: flex;
       align-items: center;
       gap: 29px;
