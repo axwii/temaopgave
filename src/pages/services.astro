@@ -15,17 +15,54 @@ const firstThreeEmployees = employeeData.slice(0, 3);
 ---
 
 <BaseLayout title="Home">
-  <Hero label="team" image="src/assets/images/theConsultorsHero.png">Creative Services For Boost Your Business Growth</Hero>
+  <Hero label="Services" image="src/assets/images/theConsultorsHero.png"
+    >Creative Services For Boost Your Business Growth</Hero
+  >
   <article>
-    <h1>Welcome to AskExperts</h1>
+    <Label color="green">Our vison</Label>
+    <h2>Turn your ideas into reality.</h2>
     <p>
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde odio rerum
-      obcaecati illum. Possimus deserunt unde, alias aut cum debitis enim ipsa
-      architecto repellendus facilis?
+      Capitalize on low hanging fruit to identify a ballpark value added
+      activity beta test. Override the digital divide with additional from
+      DevOps.
     </p>
+    <ul>
+      <li>
+        Bring to the table win-win survival strategies to ensure proactive
+        domination. At the end of the day.
+      </li>
+      <li>
+        Capitalize on low hanging fruit to identify a ballpark value added
+        activity to beta test override the digital.
+      </li>
+    </ul>
+    <figure>
+      <img src="src/assets/images/ideasIntoReality.png" alt="" />
+    </figure>
   </article>
-
 
   <EmployeeSection data={firstThreeEmployees} />
   <Newsletter />
 </BaseLayout>
+
+<style>
+  figure {
+    margin-inline: auto;
+    max-width: 400px;
+    margin: 3rem;
+    display: block;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      right: -1.5rem;
+      top: -1rem;
+      background: #4eaf4e;
+      width: 100px;
+      height: 100px;
+      z-index: -1;
+      border-radius: 20px;
+    }
+  }
+</style>
