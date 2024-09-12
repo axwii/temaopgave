@@ -1,0 +1,53 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+import EmployeeSection from "../components/EmployeeSection.astro";
+import Newsletter from "../components/Newsletter.astro";
+import Button from "../components/Button.astro";
+import Hero from "../components/Hero.astro";
+
+const employeeData = await fetch(
+  "https://raw.githubusercontent.com/axwii/frontend-design/main/resources/json/employees.json"
+).then((res) => res.json());
+---
+
+<BaseLayout title="Home">
+  <Hero label="team" image="src/assets/images/theConsultorsHero.png"
+    >The Consultors</Hero
+  >
+  <article>
+    <div class="tw">
+      <div>
+        <h1>Meet Our Great Team</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. enim ad
+          minim veniam, quis nostrud exercitation.
+        </p>
+      </div>
+      <Button class="btn">Join our team</Button>
+    </div>
+  </article>
+
+  <EmployeeSection data={employeeData} />
+  <Newsletter />
+</BaseLayout>
+
+<style>
+  article {
+    margin-top: 4em;
+  }
+  .tw {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .btn {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+  p {
+    max-width: 65ch;
+  }
+</style>
