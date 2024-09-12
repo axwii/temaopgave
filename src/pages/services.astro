@@ -1,0 +1,31 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+import EmployeeSection from "../components/EmployeeSection.astro";
+import Newsletter from "../components/Newsletter.astro";
+import Button from "../components/Button.astro";
+import Label from "../components/Label.astro";
+import Hero from "../components/Hero.astro";
+
+const employeeData = await fetch(
+  "https://raw.githubusercontent.com/axwii/frontend-design/main/resources/json/employees.json"
+).then((res) => res.json());
+
+const firstThreeEmployees = employeeData.slice(0, 3);
+---
+
+<BaseLayout title="Home">
+  <Hero label="team" image="src/assets/images/theConsultorsHero.png">Creative Services For Boost Your Business Growth</Hero>
+  <article>
+    <h1>Welcome to AskExperts</h1>
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde odio rerum
+      obcaecati illum. Possimus deserunt unde, alias aut cum debitis enim ipsa
+      architecto repellendus facilis?
+    </p>
+  </article>
+
+
+  <EmployeeSection data={firstThreeEmployees} />
+  <Newsletter />
+</BaseLayout>
