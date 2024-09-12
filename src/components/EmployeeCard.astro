@@ -15,17 +15,51 @@ if (!images[img])
 ---
 
 <article>
-  <h2>{name}</h2>
-  <h3>{title}</h3>
-  <p>{description}</p>
   <Image src={images[img]()} alt={name} />
+  <h3>{title}</h3>
+  <h2>{name}</h2>
+  <p>{description}</p>
+  <span class="icons">
+    <img src="src/icons/instagram.svg" alt="instagram" />
+    <img src="src/icons/facebook.svg" alt="facebook" />
+    <img src="src/icons/twitter.svg" alt="twitter" />
+  </span>
 </article>
 
 <style>
   @layer components {
     article {
-      color: var(--text-card);
-      background: var(--bg-card);
+      --gap: 0;
+      justify-items: center;
+      background: aliceblue;
+    }
+
+    img {
+      border-radius: 20px;
+    }
+
+    h3 {
+      padding: 4px 21px;
+      border-radius: 29px;
+      font-size: 16px;
+      line-height: 160%; /* 25.6px */
+      background: #181818;
+      color: #fff;
+    }
+
+    p {
+      text-align: center;
+    }
+
+    .icons {
+      display: flex;
+      align-items: center;
+      gap: 29px;
+    }
+
+    .icons img {
+      width: 24px;
+      height: 24px;
     }
   }
 </style>
