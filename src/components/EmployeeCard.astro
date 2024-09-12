@@ -3,7 +3,7 @@ import type { ImageMetadata } from "astro";
 import { Image } from "astro:assets";
 
 const { employee } = Astro.props;
-const { img, name, title, description } = employee;
+const { img, name, title, description, slug } = employee;
 
 const images = import.meta.glob<{ default: ImageMetadata }>(
   "/src/assets/images/*.{jpeg,jpg,png,gif}"
@@ -15,10 +15,12 @@ if (!images[img])
 ---
 
 <article>
-  <div class="image-container">
-    <Image src={images[img]()} alt={name} />
-    <h3>{title}</h3>
-  </div>
+  <a href={`/${slug}`}>
+    <div class="image-container">
+      <Image src={images[img]()} alt={name} />
+      <h3>{title}</h3>
+    </div>
+  </a>
   <h2>{name}</h2>
   <p>{description}</p>
   <span class="icons">
@@ -61,7 +63,7 @@ if (!images[img])
       color: #fff;
     }
 
-    article:hover .image-container h3 {
+    .image-container:hover h3 {
       background: #ffcc4a;
       color: #181818;
     }

@@ -1,0 +1,38 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
+
+import Newsletter from "../components/Newsletter.astro";
+
+export async function getStaticPaths() {
+  const employeeData = await fetch(
+    "https://raw.githubusercontent.com/axwii/frontend-design/main/resources/json/employees.json"
+  ).then((res) => res.json());
+
+  return employeeData.map((employee) => {
+    return {
+      params: { slug: employee.slug },
+      props: { myData: employee },
+    };
+  });
+}
+
+const { myData } = Astro.props;
+const { name, title, img } = myData;
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/images/*.{jpeg,jpg,png,gif}"
+);
+if (!images[img])
+  throw new Error(
+    `"${img}" does not exist in glob: "src/assets/images/*.{jpeg,jpg,png,gif}"`
+  );
+---
+
+<BaseLayout title="Home">
+  <Image src={images[img]()} alt={name} />
+  <h4>{name}</h4>
+  <p>{title}</p>
+  <Newsletter />
+</BaseLayout>
