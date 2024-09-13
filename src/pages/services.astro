@@ -5,6 +5,7 @@ import EmployeeSection from "../components/EmployeeSection.astro";
 import Newsletter from "../components/Newsletter.astro";
 import OurVisionSection from "../components/OurVisionSection.astro";
 import Hero from "../components/Hero.astro";
+import Label from "../components/Label.astro";
 
 const employeeData = await fetch(
   "https://raw.githubusercontent.com/axwii/frontend-design/main/resources/json/employees.json"
@@ -18,8 +19,31 @@ const firstThreeEmployees = employeeData.slice(0, 3);
     >Creative Services For Boost Your Business Growth</Hero
   >
   <OurVisionSection />
+  <article>
+    <Label>Our team</Label>
+    <h2>We champion the bold to achieve the extraordinary</h2>
+    <p>
+      Ippsum is the result of synergy between our teams and our customers. Our
+      company culture is focused on excellent productivity, customer
+      satisfaction, respect for team.
+    </p>
+  </article>
   <EmployeeSection data={firstThreeEmployees} />
   <Newsletter />
 </BaseLayout>
 
-<style></style>
+<style>
+    article {
+        margin-top: 3rem;
+    }
+    
+    h2 {
+        margin: 1rem 0;
+        max-width: 20ch;
+    }
+    
+    p {
+        margin: 1rem 0;
+        max-width: 65ch;
+    }
+</style>
