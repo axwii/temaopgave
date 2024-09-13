@@ -6,27 +6,45 @@ import Label from "../components/Label.astro";
   <div class="grid_1-1">
     <Label class="" color="green">Our vison</Label>
     <div class="visionText">
-        <h2>Turn your ideas into reality.</h2>
-        <p>
+      <h2>Turn your ideas into reality.</h2>
+      <p>
+        Capitalize on low hanging fruit to identify a ballpark value added
+        activity beta test. Override the digital divide with additional from
+        DevOps.
+      </p>
+      <ul class="styled-list">
+        <li>
+          Bring to the table win-win survival strategies to ensure proactive
+          domination. At the end of the day.
+        </li>
+        <li>
           Capitalize on low hanging fruit to identify a ballpark value added
-          activity beta test. Override the digital divide with additional from
-          DevOps.
-        </p>
-        <ul class="styled-list">
-          <li>
-            Bring to the table win-win survival strategies to ensure proactive
-            domination. At the end of the day.
-          </li>
-          <li>
-            Capitalize on low hanging fruit to identify a ballpark value added
-            activity to beta test override the digital.
-          </li>
-        </ul>
+          activity to beta test override the digital.
+        </li>
+      </ul>
     </div>
     <figure>
       <img src="src/assets/images/ideasIntoReality.png" alt="" />
     </figure>
   </div>
+  <ul class="graphic-list">
+    <li>
+      <p>1128+</p>
+      <p>Successful Work</p>
+    </li>
+    <li>
+      <p>908+</p>
+      <p>Team member</p>
+    </li>
+    <li>
+      <p>258+</p>
+      <p>Happy Customers</p>
+    </li>
+    <li>
+      <p>564+</p>
+      <p>Creative Idea</p>
+    </li>
+  </ul>
 </article>
 
 <style>
@@ -39,6 +57,26 @@ import Label from "../components/Label.astro";
 
   .visionText {
     grid-column: 1 / 2;
+  }
+
+  .graphic-list {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    flex-wrap: wrap;
+    li {
+      margin: 1rem;
+      p:first-child {
+        color: #181818;
+        font-family: Cabin;
+        font-size: 50px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 116%; /* 58px */
+      }
+    }
   }
 
   .styled-list {
