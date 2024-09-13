@@ -6,6 +6,7 @@ import Newsletter from "../components/Newsletter.astro";
 import OurVisionSection from "../components/OurVisionSection.astro";
 import Hero from "../components/Hero.astro";
 import Label from "../components/Label.astro";
+import CoreValuesSection from "../components/CoreValuesSection.astro";
 
 const employeeData = await fetch(
   "https://raw.githubusercontent.com/axwii/frontend-design/main/resources/json/employees.json"
@@ -14,11 +15,12 @@ const employeeData = await fetch(
 const firstThreeEmployees = employeeData.slice(0, 3);
 ---
 
-<BaseLayout title="Home">
+<BaseLayout title="Services">
   <Hero label="Services" image="src/assets/images/theConsultorsHero.png"
     >Creative Services For Boost Your Business Growth</Hero
   >
   <OurVisionSection />
+  <CoreValuesSection />
   <article>
     <Label>Our team</Label>
     <h2>We champion the bold to achieve the extraordinary</h2>
