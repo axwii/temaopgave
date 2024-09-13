@@ -1,0 +1,80 @@
+---
+import Label from "../components/Label.astro";
+---
+
+<article>
+  <div class="grid_1-1">
+    <Label class="" color="green">Our vison</Label>
+    <div class="visionText">
+        <h2>Turn your ideas into reality.</h2>
+        <p>
+          Capitalize on low hanging fruit to identify a ballpark value added
+          activity beta test. Override the digital divide with additional from
+          DevOps.
+        </p>
+        <ul class="styled-list">
+          <li>
+            Bring to the table win-win survival strategies to ensure proactive
+            domination. At the end of the day.
+          </li>
+          <li>
+            Capitalize on low hanging fruit to identify a ballpark value added
+            activity to beta test override the digital.
+          </li>
+        </ul>
+    </div>
+    <figure>
+      <img src="src/assets/images/ideasIntoReality.png" alt="" />
+    </figure>
+  </div>
+</article>
+
+<style>
+  .grid_1-1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin: 3rem 0;
+  }
+
+  .visionText {
+    grid-column: 1 / 2;
+  }
+
+  .styled-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .styled-list li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 10px;
+  }
+
+  .styled-list li::before {
+    content: url("src/icons/tick.svg");
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+  }
+
+  figure {
+    display: block;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      right: -1.5rem;
+      top: -1rem;
+      background: #4eaf4e;
+      width: 100px;
+      height: 100px;
+      z-index: -1;
+      border-radius: 20px;
+    }
+  }
+</style>
