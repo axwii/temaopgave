@@ -1,27 +1,33 @@
 ---
 const { title, icon } = Astro.props;
 ---
-<div class="card">
-    <img src={icon} alt="">
-    <h4>{title}</h4>
-    <p>
-      <slot />
-    </p>
-    <p>Read More</p>
-</div>
+
+<li>
+  <img src={icon} alt="" />
+  <h4>{title}</h4>
+  <p>
+    <slot />
+  </p>
+  <p>Read More →</p>
+</li>
 
 <style>
-    .card {
-        background-color: #fff;
-        border-radius: 20px;
-        padding: 3rem;
-        margin-top: 3rem;
-        width: 300px;
-    }
+  li {
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 1rem;
+    align-self: start;
+    /* background: var(--bg-card); */
+  }
 
-    img {
-        width: 50px;
-        height: 50px;
-    }
+  img {
+    width: 50px;
+    height: 50px;
+  }
+
+  p:last-of-type {
+    font-weight: 600;
+    /* color: var(--text-card); */
+  } 
 
 </style>
