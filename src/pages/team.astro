@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Container from "../layouts/Container.astro";
 
 import EmployeeSection from "../components/EmployeeSection.astro";
 import Newsletter from "../components/Newsletter.astro";
@@ -12,10 +13,11 @@ const employeeData = await fetch(
 ---
 
 <BaseLayout title="Team">
-  <Hero label="team" image="src/assets/images/theConsultorsHero.png"
-    >The Consultors</Hero
-  >
-  <article>
+  <Container layout="full-bleed">
+    <Hero bgImage="theConsultorsHero.png" label="team">The Consultors</Hero>
+  </Container>
+
+  <Container layout="content">
     <div class="tw">
       <div>
         <h1>Meet Our Great Team</h1>
@@ -27,16 +29,14 @@ const employeeData = await fetch(
       </div>
       <Button class="btn">Join our team</Button>
     </div>
-  </article>
-
-  <EmployeeSection data={employeeData} />
-  <Newsletter />
+    <EmployeeSection data={employeeData} />
+  </Container>
+  <Container layout="content">
+    <Newsletter />
+  </Container>
 </BaseLayout>
 
 <style>
-  article {
-    margin-top: 4em;
-  }
   .tw {
     display: flex;
     justify-content: space-between;

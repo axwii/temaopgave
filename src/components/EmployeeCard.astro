@@ -14,7 +14,7 @@ if (!images[img])
   );
 ---
 
-<article>
+<div>
   <a href={`/${slug}`}>
     <div class="image-container">
       <Image src={images[img]()} alt={name} />
@@ -28,15 +28,16 @@ if (!images[img])
     <img src="src/icons/facebook.svg" alt="facebook" />
     <img src="src/icons/twitter.svg" alt="twitter" />
   </span>
-</article>
+</div>
 
 <style>
   @layer components {
-    article {
+    div {
       margin-top: 43px;
       margin-bottom: 37px;
       --gap: 0;
       justify-items: center;
+      display: grid;
     }
 
     .image-container {
