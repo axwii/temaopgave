@@ -1,0 +1,41 @@
+---
+const { id, text } = Astro.props;
+---
+
+<button popovertarget={id}>{text}</button>
+
+<div popover id={id} class="popover-content">
+  <h2>Log in to Dashboard</h2>
+  <form>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required />
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required />
+    <button type="submit">Login</button>
+  </form>
+</div>
+
+<style>
+  .popover-content {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+
+  [popover]:target {
+    display: block;
+  }
+
+  ::backdrop {
+    background: #0004;
+    backdrop-filter: blur(4px);
+  }
+
+</style>

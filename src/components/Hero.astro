@@ -1,42 +1,37 @@
 ---
 import Label from "./Label.astro";
+const { bgImage, label } = Astro.props;
 
-const { image, label } = Astro.props;
+const importedImage = `/src/assets/images/${bgImage}`;
+
 ---
 
-<article class="full">
-  <img class="full" src={image} alt="" />
-  <div class="hero-content">
+<section style={`background-image: url(${importedImage});`}>
+  <header>
     <Label>{label}</Label>
     <h1><slot /></h1>
-  </div>
-</article>
+  </header>
+</section>
 
 <style>
-  img {
+    section {
+    grid-column: full;
     display: grid;
-    grid-template-columns: subgrid;
-  }
+    grid: auto / subgrid;
+    background-size: cover;
+    background-position: 50% 40%;
 
-  .hero-content {
-    display: inline-flex;
-    padding: 48px 60px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-    border-radius: 29px;
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(5.5px);
+    > * {
+      grid-column: content;
+    }
 
-    /* dont like this */
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-  }
-
-  /* fix this */
-  article {
-    position: relative;
+    header {
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(5.5px);
+      justify-self: start;
+      border-radius: 29px;
+      margin-block: clamp(3rem, 0.2727rem + 11.6364vw, 9rem);
+    }
   }
 </style>

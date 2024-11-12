@@ -1,4 +1,7 @@
 ---
+// import { ViewTransitions } from "astro:transitions";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 import "../styles/global.css";
 const { title = "" } = Astro.props;
 ---
@@ -9,118 +12,42 @@ const { title = "" } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <link rel="stylesheet" href="../src/styles/global.css" />
+    <!-- <ViewTransitions /> -->
     <title>{title} — AskExperts</title>
   </head>
   <body>
-    <header>
-      <div class="Header">
-        <h1 class="logo">AskExperts</h1>
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="">Case Study</a></li>
-          <li><a href="/team">Team</a></li>
-          <li><a href="/services">About</a></li>
-        </ul>
-        <button>Login</button>
-      </div>
-    </header>
+    <Header />
     <main>
       <slot />
     </main>
-    <footer>
-      <div class="footerContent">
-        <h1 class="logo">AskExperts</h1>
-        <div class="divider"></div>
-        <p>
-          ©2022 Consultalk. All rights reserved | Terms of Service | Privacy
-          Policy
-        </p>
-      </div>
-    </footer>
+    <Footer />
   </body>
 </html>
 
 <style>
-  header {
-    background: rgba(27, 27, 27, 0.91);
-  }
+  @layer components {
+    body {
+      display: grid;
+      grid-template-columns:
+        [full-start] minmax(1rem, 1fr)
+        [content-start] minmax(0, calc(var(--content-width) / 2))
+        minmax(0, calc(var(--content-width) / 2))
+        [content-end]
+        minmax(1rem, 1fr) [full-end];
+      grid-template-rows: auto 1fr auto;
+      column-gap: 0;
+      align-content: start;
 
-  .Header {
-    margin: auto;
-    max-width: 1200px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 25px;
-    button {
-      border-radius: 20px;
-      background-color: #ffcc4a;
-      color: #181818;
-      font-family: "Lato", sans-serif;
-      font-style: normal;
-      line-height: 160%;
-      padding: 4px 16px;
+      > :is(header, main, footer) {
+        grid-column: full;
+        display: grid;
+        grid-template-columns: subgrid;
+        align-content: start;
 
-      /* Flexbox properties */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      align-self: center;
-    }
-    h1 {
-      align-self: center;
-    }
-    ul {
-      display: flex;
-      list-style: none;
-      padding-inline-start: 0px;
-      justify-content: center;
-      align-items: center;
-      gap: 30px;
-      li {
-        margin: 0 20px 0 20px;
-        font-family: Lato;
-        font-size: 17.728px;
-        font-style: normal;
-        a {
-          text-decoration: none;
-          color: #fff;
+        > * {
+          grid-column: content;
         }
       }
     }
-  }
-
-  footer {
-    display: grid;
-    place-items: center;
-    padding: 20px;
-    background-color: #000;
-
-    .divider {
-      width: 100%;
-      height: 1px;
-      background: #707070;
-    }
-
-    .footerContent {
-      display: grid;
-      grid-template-rows: auto auto auto;
-      align-items: center;
-      gap: 36px;
-      width: 100%;
-      max-width: 1200px;
-      color: #fff;
-      text-align: center;
-    }
-  }
-
-  .logo {
-    color: #fff;
-    font-family: Cabin;
-    font-size: 30px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 105%;
   }
 </style>

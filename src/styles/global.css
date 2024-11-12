@@ -31,6 +31,8 @@
     font-size: var(--step-0);
     line-height: 147.5%; /* 23.6px */
     color: #595566; /* Text color */
+
+    --content-width: 1200px;
   }
 
   h1,

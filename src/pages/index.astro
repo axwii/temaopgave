@@ -1,6 +1,8 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 
+import Container from "../layouts/Container.astro";
+
 import EmployeeSection from "../components/EmployeeSection.astro";
 import Newsletter from "../components/Newsletter.astro";
 import Button from "../components/Button.astro";
@@ -15,7 +17,18 @@ const firstThreeEmployees = employeeData.slice(0, 3);
 ---
 
 <BaseLayout title="Home">
-  <Hero label="team" image="src/assets/images/theConsultorsHero.png">The Consultors</Hero>
+  <Container layout="full-bleed" >
+    <Hero bgImage="theConsultorsHero.png" label="team">The Consultors</Hero>
+  </Container>
+  
+  <Container layout="content">
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde odio rerum
+      obcaecati illum. Possimus deserunt unde, alias aut cum debitis enim ipsa
+      architecto repellendus facilis?
+    </p>
+  </Container>
+  
   <article>
     <h1>Welcome to AskExperts</h1>
     <p>

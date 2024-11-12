@@ -1,0 +1,50 @@
+---
+import Popover from "./Popover.astro";
+---
+
+<header>
+  <div class="logo">
+    <a href="/">AskExperts</a>
+  </div>
+
+  <nav>
+    <ul role="list">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/team">Team</a></li>
+      <li><a href="/case">case</a></li>
+    </ul>
+  </nav>
+
+  <Popover id="loginPopup" text="Login" />
+</header>
+
+<style>
+  header {
+    background: rgba(27, 27, 27, 0.91);
+    display: flex;
+    gap: 1.875rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem max(1rem, 50% - var(--content-width) / 2);
+  }
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.875rem;
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+  .logo {
+    a {
+      color: #fff;
+      font-family: Cabin;
+      font-size: 1.6rem;
+      text-decoration: none;
+      font-weight: 600;
+    }
+  }
+</style>

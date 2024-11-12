@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Container from "../layouts/Container.astro";
 
 import EmployeeSection from "../components/EmployeeSection.astro";
 import Newsletter from "../components/Newsletter.astro";
@@ -20,7 +21,9 @@ const firstThreeEmployees = employeeData.slice(0, 3);
     >Creative Services For Boost Your Business Growth</Hero
   >
   <OurVisionSection />
-  <CoreValuesSection />
+  <Container>
+    <CoreValuesSection />
+  </Container>
   <article>
     <Label>Our team</Label>
     <h2>We champion the bold to achieve the extraordinary</h2>
