@@ -39,11 +39,8 @@ import CoreValuesCard from "./CoreValuesCard.astro";
   }
 
   ul {
-    display: flex;
+    display: grid;
     gap: 1rem;
-
-    > * {
-      flex: 1;
-    }
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
 </style>

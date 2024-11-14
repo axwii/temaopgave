@@ -47,9 +47,15 @@ import Label from "../components/Label.astro";
 <style>
   .grid_1-1 {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 2rem;
     margin: 3rem 0;
+  }
+
+  @media (min-width: 800px) {
+    .grid_1-1 {
+      grid-template-columns: 1fr 1fr;
+    }
   }
 
   .visionText {
