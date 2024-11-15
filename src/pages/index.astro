@@ -3,18 +3,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 import Container from "../layouts/Container.astro";
 
-import EmployeeSection from "../components/EmployeeSection.astro";
 import Newsletter from "../components/Newsletter.astro";
 import Button from "../components/Button.astro";
 import Label from "../components/Label.astro";
 import Hero from "../components/Hero.astro";
 import Pie from "../components/Pie.astro";
 
-const employeeData = await fetch(
-  "https://raw.githubusercontent.com/axwii/frontend-design/main/resources/json/employees.json"
-).then((res) => res.json());
-
-const firstThreeEmployees = employeeData.slice(0, 3);
 ---
 
 <BaseLayout title="Home">
