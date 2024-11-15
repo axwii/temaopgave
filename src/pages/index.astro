@@ -8,6 +8,7 @@ import Newsletter from "../components/Newsletter.astro";
 import Button from "../components/Button.astro";
 import Label from "../components/Label.astro";
 import Hero from "../components/Hero.astro";
+import Pie from "../components/Pie.astro";
 
 const employeeData = await fetch(
   "https://raw.githubusercontent.com/axwii/frontend-design/main/resources/json/employees.json"
@@ -17,10 +18,10 @@ const firstThreeEmployees = employeeData.slice(0, 3);
 ---
 
 <BaseLayout title="Home">
-  <Container layout="full-bleed" >
+  <Container layout="full-bleed">
     <Hero bgImage="theConsultorsHero.png" label="team">The Consultors</Hero>
   </Container>
-  
+
   <Container layout="content">
     <p>
       Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde odio rerum
@@ -28,24 +29,32 @@ const firstThreeEmployees = employeeData.slice(0, 3);
       architecto repellendus facilis?
     </p>
   </Container>
-  
-  <article>
+
+  <Container layout="content">
     <h1>Welcome to AskExperts</h1>
     <p>
       Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde odio rerum
       obcaecati illum. Possimus deserunt unde, alias aut cum debitis enim ipsa
       architecto repellendus facilis?
     </p>
-  </article>
-  <Button theme="">Get Started Primary</Button>
-  <Button theme="secondary">Get Started Secondary</Button>
-  <Button theme="tertiary">Get Started Tertiary</Button>
-  <Label>Services</Label>
-  <Label color="yellow">Services</Label>
-  <Label color="green">Services</Label>
-  <Label color="white">Services</Label>
+  </Container>
 
-  <EmployeeSection data={firstThreeEmployees} />
-  <EmployeeSection data={employeeData}/>
-  <Newsletter />
+  <Container layout="content">
+    <Button theme="">Get Started Primary</Button>
+    <Button theme="secondary">Get Started Secondary</Button>
+    <Button theme="tertiary">Get Started Tertiary</Button>
+    <Label>Services</Label>
+    <Label color="yellow">Services</Label>
+    <Label color="green">Services</Label>
+    <Label color="white">Services</Label>
+  </Container>
+
+  <Container layout="full-bleed" padding="6rem">
+    <Pie percent={84} />
+    <Pie percent={24} />
+    <Pie percent={97} />
+  </Container>
+  <Container layout="content">
+    <Newsletter />
+  </Container>
 </BaseLayout>
