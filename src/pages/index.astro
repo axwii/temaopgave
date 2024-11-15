@@ -8,11 +8,14 @@ import Button from "../components/Button.astro";
 import Label from "../components/Label.astro";
 import Hero from "../components/Hero.astro";
 import Pie from "../components/Pie.astro";
-
+import LandingPageHero from "../components/LandingPageHero.astro";
+import WhatToExpect from "../components/WhatToExpect.astro";
 ---
 
 <BaseLayout title="Home">
+  <LandingPageHero />
   <Hero bgImage="theConsultorsHero.png" label="team">The Consultors</Hero>
+  <WhatToExpect />
 
   <Container layout="content">
     <p>
