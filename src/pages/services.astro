@@ -21,7 +21,7 @@ const firstThreeEmployees = employeeData.slice(0, 3);
   <Container>
     <OurVisionSection />
   </Container>
-  <Container layout="content">
+  <Container layout="full-bleed" theme="light">
     <CoreValuesSection />
   </Container>
   <Container layout="content">
@@ -34,7 +34,9 @@ const firstThreeEmployees = employeeData.slice(0, 3);
       </p>
     <EmployeeSection data={firstThreeEmployees} />
   </Container>
-  <Newsletter />
+  <Container layout="content">
+    <Newsletter />
+  </Container>
 </BaseLayout>
 
 <style>

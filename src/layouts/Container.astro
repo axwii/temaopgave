@@ -16,20 +16,19 @@ const { padding = "initial", layout = "full-bleed", theme } = Astro.props;
     section {
       /*Delete! */
       padding-block: var(--padding, 3rem);
-      outline: 2px solid red;
-      outline-offset: -2px;
 
-      background: repeating-linear-gradient(
-        45deg,
-        #e9e9e9 0 5px,
-        transparent 0 10px
-      );
-      /* background: var(--bg-section, #fff); */
-    }
-    div {
-      padding-block: var(--padding, 3rem);
       outline: 2px solid red;
       outline-offset: -2px;
+      background: var(--bg-section, #fff);
+      color: var(--text-section, #181818);
+      h1,h2,h3,h4,h5,h6 {
+        color: var(--header-section, #181818) ;
+      }
+
+      li {
+        background-color: var(--bg-card, #fff);
+        color: var(--text-card, #181818);
+      }
     }
 
     [data-layout="content"] {
@@ -55,6 +54,21 @@ const { padding = "initial", layout = "full-bleed", theme } = Astro.props;
     [data-theme="dark"] {
       --bg-section: #181818;
       --text-section: #fff;
+      --header-section: #fff;
+      --bg-card: #f5f5f5;
+      --text-card: #181818;
+    }
+    [data-theme="light"] {
+      --bg-section: #f5f5f5;
+      --text-section: #595566;
+      --header-section: #181818;
+      --bg-card: #595566;
+      --text-card: #181818;
+    }
+    [data-theme="yellow"] {
+      --bg-section: #ffcc4a;
+      --text-section: #181818;
+      --header-section: #181818;
       --bg-card: gainsboro;
       --text-card: #181818;
     }

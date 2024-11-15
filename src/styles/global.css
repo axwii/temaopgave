@@ -42,7 +42,7 @@
   h5,
   h6 {
     font-family: "Cabin", sans-serif;
-    color: #181818; /* Heading color */
+    /* color: #181818; Heading color */
     line-height: 1.125;
   }
 
