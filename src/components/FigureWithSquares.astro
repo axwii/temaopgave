@@ -1,12 +1,37 @@
 ---
-const { beforeTop, beforeLeft, beforeRight, afterTop, afterLeft, afterRight, imgSrc, imgAlt } = Astro.props;
+const {
+  beforeTop,
+  beforeLeft,
+  beforeRight,
+  afterTop,
+  afterLeft,
+  afterRight,
+  imgSrc,
+  imgAlt,
+} = Astro.props;
+const beforePositionTop = beforeTop;
+const beforePositionLeft = beforeLeft;
+const beforePositionRight = beforeRight;
+
+const afterPositionTop = afterTop;
+const afterPositionLeft = afterLeft;
+const afterPositionRight = afterRight;
 ---
 
 <figure style="">
   <img src={imgSrc} alt={imgAlt} />
 </figure>
 
-<style>
+<style
+  define:vars={{
+    beforePositionTop,
+    beforePositionLeft,
+    beforePositionRight,
+    afterPositionTop,
+    afterPositionLeft,
+    afterPositionRight,
+  }}
+>
   figure {
     margin-top: 3rem;
     position: relative;
@@ -22,8 +47,9 @@ const { beforeTop, beforeLeft, beforeRight, afterTop, afterLeft, afterRight, img
     z-index: 1;
     content: "";
     position: absolute;
-    left: -14%;
-    top: -14%;
+    left: var(--beforePositionLeft);
+    right: var(--beforePositionRight);
+    top: var(--beforePositionTop);
     inline-size: calc(
       round(var(--_square-sum), var(--_square-size)) - var(--_square-half)
     );
@@ -49,8 +75,9 @@ const { beforeTop, beforeLeft, beforeRight, afterTop, afterLeft, afterRight, img
   figure::after {
     content: "";
     position: absolute;
-    left: -6%;
-    top: -5%;
+    left: var(--afterPositionLeft);
+    right: var(--afterPositionRight);
+    top: var(--afterPositionTop);
     background: #4eaf4e;
     width: 150px;
     height: 150px;
