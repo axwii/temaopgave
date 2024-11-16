@@ -1,12 +1,18 @@
 ---
 // import "../styles/global.css"
 import Label from "./Label.astro";
+import FigureWithSquares from "./FigureWithSquares.astro";
 ---
 
 <div class="grid_1-1">
-  <figure>
-    <img src="src/assets/images/whatToExpect.png" alt="gruppearbejde" />
-  </figure>
+    <FigureWithSquares
+    beforeTop="-14%"
+    beforeLeft="-14%"
+    afterTop="-5%"
+    afterLeft="-6%"
+    imgSrc="src/assets/images/whatToExpect.png"
+    imgAlt="What to expect"
+  />
   <div class="flex">
     <Label>We'll work with you</Label>
     <h1>What To Expect</h1>
@@ -85,62 +91,6 @@ import Label from "./Label.astro";
     width: 1.6rem;
     aspect-ratio: 1;
     background: var(--checkmark-icon) 50% 50% / contain no-repeat;
-  }
-
-   img {
-    position: relative;
-    border-radius: 20px;
-    z-index: 10;
-  }
-
-  figure {
-    margin-top: 3rem;
-    position: relative; /* Add this line */
-    &::before {
-      --square-count: 10;
-      --square-size: 1.5rem;
-
-      --_square-size: var(--square-size, 1rem);
-      --_square-half: calc(var(--square-size) / 2);
-      --_square-sum: calc(var(--square-count) * var(--square-size));
-      z-index: 1;
-      content: "";
-      position: absolute;
-      left: -14%;
-      top: -14%;
-      inline-size: calc(
-        round(var(--_square-sum), var(--_square-size)) - var(--_square-half)
-      );
-      aspect-ratio: 1;
-      background: linear-gradient(
-          135deg,
-          #be965d,
-          #976f40,
-          #c99b61,
-          #f0be7b,
-          #ffcb85,
-          #eebc79,
-          #c0935b,
-          #976f40
-        )
-        0 0 / 100% 100%;
-      mask:
-        var(--square-pattern) 0 0 / var(--_square-size) var(--_square-size),
-        var(--square-pattern) var(--_square-half) var(--_square-half) /
-          var(--_square-size) var(--_square-size);
-    }
-
-    &::after {
-      content: "";
-      position: absolute;
-      left: -6%;
-      top: -5%;
-      background: #4eaf4e;
-      width: 150px;
-      height: 150px;
-      border-radius: 20px;
-      z-index: 2;
-    }
   }
 
   img {
