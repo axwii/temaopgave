@@ -1,24 +1,17 @@
 ---
 const {
-  beforeTop,
-  beforeLeft,
-  beforeRight,
-  afterTop,
-  afterLeft,
-  afterRight,
+  beforeTop: beforePositionTop,
+  beforeLeft: beforePositionLeft,
+  beforeRight: beforePositionRight,
+  afterTop: afterPositionTop,
+  afterLeft: afterPositionLeft,
+  afterRight: afterPositionRight,
   imgSrc,
   imgAlt,
 } = Astro.props;
-const beforePositionTop = beforeTop;
-const beforePositionLeft = beforeLeft;
-const beforePositionRight = beforeRight;
-
-const afterPositionTop = afterTop;
-const afterPositionLeft = afterLeft;
-const afterPositionRight = afterRight;
 ---
 
-<figure style="">
+<figure>
   <img src={imgSrc} alt={imgAlt} />
 </figure>
 
