@@ -87,13 +87,15 @@ import Label from "./Label.astro";
     background: var(--checkmark-icon) 50% 50% / contain no-repeat;
   }
 
-  figure img {
+   img {
     position: relative;
     border-radius: 20px;
     z-index: 10;
   }
 
   figure {
+    margin-top: 3rem;
+    position: relative; /* Add this line */
     &::before {
       --square-count: 10;
       --square-size: 1.5rem;
@@ -104,8 +106,8 @@ import Label from "./Label.astro";
       z-index: 1;
       content: "";
       position: absolute;
-      left: 2%;
-      bottom: -9%;
+      left: -14%;
+      top: -14%;
       inline-size: calc(
         round(var(--_square-sum), var(--_square-size)) - var(--_square-half)
       );
@@ -131,8 +133,8 @@ import Label from "./Label.astro";
     &::after {
       content: "";
       position: absolute;
-      left: 3%;
-      bottom: -6%;
+      left: -6%;
+      top: -5%;
       background: #4eaf4e;
       width: 150px;
       height: 150px;
