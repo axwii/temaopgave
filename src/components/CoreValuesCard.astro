@@ -4,7 +4,7 @@ const { title, icon } = Astro.props;
 
 <li>
   <img src={icon} alt="" />
-  <h4>{title}</h4>
+  <p>{title}</p>
   <p>
     <slot />
   </p>
@@ -26,9 +26,20 @@ const { title, icon } = Astro.props;
     height: 50px;
   }
 
+  p:first-of-type {
+    font-weight: 600;
+    font-size: 20px;
+    font-family: Cabin;
+    color: #181818;
+    margin-block: 1rem;
+    /* color: var(--text-card); */
+  } 
+
   p:last-of-type {
     font-weight: 600;
     /* color: var(--text-card); */
+    margin-top: 1rem;
+    font-size: 18px;
   } 
 
 </style>

@@ -10,12 +10,17 @@ import Hero from "../components/Hero.astro";
 import Pie from "../components/Pie.astro";
 import LandingPageHero from "../components/LandingPageHero.astro";
 import WhatToExpect from "../components/WhatToExpect.astro";
+import CoreValuesSection from "../components/CoreValuesSection.astro";
 ---
 
 <BaseLayout title="Home">
   <LandingPageHero />
   <Hero bgImage="theConsultorsHero.png" label="team">The Consultors</Hero>
   <WhatToExpect />
+
+  <Container layout="full-bleed" theme="dark">
+    <CoreValuesSection />
+  </Container>
 
   <Container layout="content">
     <p>
