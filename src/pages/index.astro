@@ -10,6 +10,7 @@ import LandingPageHero from "../components/LandingPageHero.astro";
 import WhatToExpect from "../components/WhatToExpect.astro";
 import CoreValuesSection from "../components/CoreValuesSection.astro";
 import FinancialProjections from "../components/FinancialProjections.astro";
+import ContactUs from "../components/ContactUs.astro";
 ---
 
 <BaseLayout title="Home">
@@ -31,6 +32,10 @@ import FinancialProjections from "../components/FinancialProjections.astro";
 
   <Container layout="full-bleed" theme="dark">
     <CoreValuesSection />
+  </Container>
+
+  <Container layout="content">
+    <ContactUs />
   </Container>
 
   <Container layout="content">

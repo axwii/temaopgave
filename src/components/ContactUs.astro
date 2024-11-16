@@ -1,0 +1,39 @@
+---
+import Label from "./Label.astro";
+import FigureWithSquares from "./FigureWithSquares.astro";
+---
+
+<div class="grid_1-1">
+  <div class="flex">
+    <Label color="yellow">Proccess</Label>
+    <h1>Contact Us. It's Easy.</h1>
+    <p>
+      Leverage agile frameworks to provide a robust synopsis for high level
+      overviews. Iterative approaches to corporate strategy foster
+      collaborative.
+    </p>
+  </div>
+  <FigureWithSquares
+    beforeTop="-14%"
+    beforeLeft="-14%"
+    afterTop="-5%"
+    afterLeft="-6%"
+    imgSrc="src/assets/images/contactUs1.jpg"
+    imgAlt="Contact Us"
+  />
+</div>
+
+<style>
+  .grid_1-1 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin: 3rem 0;
+  }
+
+  @media (min-width: 800px) {
+    .grid_1-1 {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+</style>
