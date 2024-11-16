@@ -4,74 +4,35 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Container from "../layouts/Container.astro";
 
 import Newsletter from "../components/Newsletter.astro";
-import Button from "../components/Button.astro";
-import Label from "../components/Label.astro";
 import Hero from "../components/Hero.astro";
 import Pie from "../components/Pie.astro";
 import LandingPageHero from "../components/LandingPageHero.astro";
 import WhatToExpect from "../components/WhatToExpect.astro";
 import CoreValuesSection from "../components/CoreValuesSection.astro";
+import FinancialProjections from "../components/FinancialProjections.astro";
 ---
 
 <BaseLayout title="Home">
   <LandingPageHero />
   <Hero bgImage="theConsultorsHero.png" label="team">The Consultors</Hero>
-  <WhatToExpect />
+  <Container layout="content">
+    <WhatToExpect />
+  </Container>
+  
+  <Container layout="full-bleed" theme="light">
+    <FinancialProjections />
+  </Container>
+
+  <Container layout="full-bleed" theme="yellow" >
+    <Pie percent={84} />
+    <Pie percent={24} />
+    <Pie percent={97} />
+  </Container>
 
   <Container layout="full-bleed" theme="dark">
     <CoreValuesSection />
   </Container>
 
-  <Container layout="content">
-    <p>
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde odio rerum
-      obcaecati illum. Possimus deserunt unde, alias aut cum debitis enim ipsa
-      architecto repellendus facilis?
-    </p>
-  </Container>
-
-  <Container layout="full-bleed" theme="yellow">
-    <h1>Welcome to AskExperts</h1>
-    <p>
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde odio rerum
-      obcaecati illum. Possimus deserunt unde, alias aut cum debitis enim ipsa
-      architecto repellendus facilis?
-    </p>
-  </Container>
-
-  <Container layout="content" theme="light">
-    <h1>Welcome to AskExperts</h1>
-    <p>
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde odio rerum
-      obcaecati illum. Possimus deserunt unde, alias aut cum debitis enim ipsa
-      architecto repellendus facilis?
-    </p>
-  </Container>
-
-  <Container layout="feature" theme="dark">
-    <h1>Welcome to AskExperts</h1>
-    <p>
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde odio rerum
-      obcaecati illum. Possimus deserunt unde, alias aut cum debitis enim ipsa
-      architecto repellendus facilis?
-    </p>
-  </Container>
-
-  <Container layout="content">
-    <Button theme="">Get Started Primary</Button>
-    <Button theme="secondary">Get Started Secondary</Button>
-    <Button theme="tertiary">Get Started Tertiary</Button>
-    <Label>Services</Label>
-    <Label color="yellow">Services</Label>
-    <Label color="green">Services</Label>
-    <Label color="white">Services</Label>
-  </Container>
-
-  <Container layout="full-bleed" padding="6rem">
-    <Pie percent={84} />
-    <Pie percent={24} />
-    <Pie percent={97} />
-  </Container>
   <Container layout="content">
     <Newsletter />
   </Container>
