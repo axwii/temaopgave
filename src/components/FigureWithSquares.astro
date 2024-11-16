@@ -1,11 +1,11 @@
 ---
 const {
-  beforeTop: beforePositionTop,
-  beforeLeft: beforePositionLeft,
-  beforeRight: beforePositionRight,
-  afterTop: afterPositionTop,
-  afterLeft: afterPositionLeft,
-  afterRight: afterPositionRight,
+  beforeTop,
+  beforeLeft,
+  beforeRight,
+  afterTop,
+  afterLeft,
+  afterRight,
   imgSrc,
   imgAlt,
 } = Astro.props;
@@ -17,12 +17,12 @@ const {
 
 <style
   define:vars={{
-    beforePositionTop,
-    beforePositionLeft,
-    beforePositionRight,
-    afterPositionTop,
-    afterPositionLeft,
-    afterPositionRight,
+    beforeTop,
+    beforeLeft,
+    beforeRight,
+    afterTop,
+    afterLeft,
+    afterRight,
   }}
 >
   figure {
@@ -39,12 +39,10 @@ const {
     z-index: 1;
     content: "";
     position: absolute;
-    top: var(--beforePositionTop);
-    left: var(--beforePositionLeft);
-    right: var(--beforePositionRight);
-    inline-size: calc(
-      round(var(--_square-sum), var(--_square-size)) - var(--_square-half)
-    );
+    top: var(--beforeTop);
+    left: var(--beforeLeft);
+    right: var(--beforeRight);
+    inline-size: calc(var(--_square-sum) - var(--_square-half));
     aspect-ratio: 1;
     background: linear-gradient(
         135deg,
@@ -58,18 +56,16 @@ const {
         #976f40
       )
       0 0 / 100% 100%;
-    mask:
-      var(--square-pattern) 0 0 / var(--_square-size) var(--_square-size),
-      var(--square-pattern) var(--_square-half) var(--_square-half) /
-        var(--_square-size) var(--_square-size);
+    mask: var(--square-pattern) 0 0 / var(--_square-size) var(--_square-size),
+          var(--square-pattern) var(--_square-half) var(--_square-half) / var(--_square-size) var(--_square-size);
   }
 
   figure::after {
     content: "";
     position: absolute;
-    top: var(--afterPositionTop);
-    left: var(--afterPositionLeft);
-    right: var(--afterPositionRight);
+    top: var(--afterTop);
+    left: var(--afterLeft);
+    right: var(--afterRight);
     background: #4eaf4e;
     width: 150px;
     height: 150px;
