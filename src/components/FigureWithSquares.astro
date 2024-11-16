@@ -33,16 +33,15 @@ const {
   figure::before {
     --square-count: 10;
     --square-size: 1.5rem;
-
     --_square-size: var(--square-size, 1rem);
     --_square-half: calc(var(--square-size) / 2);
     --_square-sum: calc(var(--square-count) * var(--square-size));
     z-index: 1;
     content: "";
     position: absolute;
+    top: var(--beforePositionTop);
     left: var(--beforePositionLeft);
     right: var(--beforePositionRight);
-    top: var(--beforePositionTop);
     inline-size: calc(
       round(var(--_square-sum), var(--_square-size)) - var(--_square-half)
     );
@@ -68,9 +67,9 @@ const {
   figure::after {
     content: "";
     position: absolute;
+    top: var(--afterPositionTop);
     left: var(--afterPositionLeft);
     right: var(--afterPositionRight);
-    top: var(--afterPositionTop);
     background: #4eaf4e;
     width: 150px;
     height: 150px;
