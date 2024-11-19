@@ -1,5 +1,6 @@
 ---
 import Label from "../components/Label.astro";
+import FigureWithSquares from "./FigureWithSquares.astro";
 ---
 <div class="grid_1-1">
   <Label class="" color="green">Our vison</Label>
@@ -21,9 +22,14 @@ import Label from "../components/Label.astro";
       </li>
     </ul>
   </div>
-  <figure>
-    <img src="src/assets/images/ideasIntoReality.png" alt="" />
-  </figure>
+  <FigureWithSquares
+    beforeTop="-14%"
+    beforeRight="-14%"
+    afterTop="-5%"
+    afterRight="-7%"
+    imgSrc="src/assets/images/ideasIntoReality.png"
+    imgAlt="Ideas Into Reality"
+  />
 </div>
 <ul class="graphic-list">
   <li>
