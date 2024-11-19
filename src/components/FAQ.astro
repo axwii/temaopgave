@@ -3,43 +3,45 @@ import Label from "./Label.astro";
 ---
 
 <div class="faq">
-  <div class="title">
-    <Label color="green">FAQ</Label>
-    <h2>Customer Questions</h2>
-  </div>
-  <details name="a">
-    <summary>What will happen when I’ve sent my application?</summary>
-    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt.</div>
-  </details>
-
-  <details name="a">
-    <summary>Can I get a free trial before I purchase?</summary>
-    <div>
-      Ippsum is the result of synergy between our teams and our customers. Our
-      company culture is focused on excellent productivity, customer
-      satisfaction, respect for team and individual achievements.
+  <div class="faq-content">
+    <div class="title">
+      <Label color="green">FAQ</Label>
+      <h2>Customer Questions</h2>
     </div>
-  </details>
+    <details name="a">
+      <summary>What will happen when I’ve sent my application?</summary>
+      <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt.</div>
+    </details>
 
-  <details name="a">
-    <summary>What should I include in my personal statement?</summary>
-    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt.</div>
-  </details>
+    <details name="a">
+      <summary>Can I get a free trial before I purchase?</summary>
+      <div>
+        Ippsum is the result of synergy between our teams and our customers. Our
+        company culture is focused on excellent productivity, customer
+        satisfaction, respect for team and individual achievements.
+      </div>
+    </details>
 
-  <details name="a">
-    <summary>Will membership plans be charged automatically?</summary>
-    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt.</div>
-  </details>
+    <details name="a">
+      <summary>What should I include in my personal statement?</summary>
+      <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt.</div>
+    </details>
 
-  <details name="a">
-    <summary>What will happen when I’ve sent my application?</summary>
-    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt.</div>
-  </details>
+    <details name="a">
+      <summary>Will membership plans be charged automatically?</summary>
+      <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt.</div>
+    </details>
 
-  <details name="a">
-    <summary>Can I get a free trial before I purchase?</summary>
-    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt.</div>
-  </details>
+    <details name="a">
+      <summary>What will happen when I’ve sent my application?</summary>
+      <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt.</div>
+    </details>
+
+    <details name="a">
+      <summary>Can I get a free trial before I purchase?</summary>
+      <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt.</div>
+    </details>
+  </div>
 </div>
 
 <style>
@@ -50,15 +52,23 @@ import Label from "./Label.astro";
     text-align: center;
   }
 
+  .faq-content {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
   .title {
     display: flex;
     flex-direction: column;
     align-items: center;
+    h2 {
+      margin: 1rem 0;
+    }
   }
 
   details {
     margin: 1rem 0;
-    border-bottom: 1px solid #DADADA;
+    border-bottom: 1px solid #dadada;
     padding-top: 1rem;
     text-align: left;
     color: #595566;
@@ -74,10 +84,11 @@ import Label from "./Label.astro";
     color: #181818;
     position: relative;
     list-style: none;
+    padding-right: 20px;
   }
 
   summary::after {
-    content: '+';
+    content: "+";
     position: absolute;
     right: 0;
     font-size: 1.5rem;
@@ -85,7 +96,7 @@ import Label from "./Label.astro";
   }
 
   details[open] summary::after {
-    content: '-';
+    content: "-";
   }
 
   div {
