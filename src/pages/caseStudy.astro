@@ -2,7 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 import Container from "../layouts/Container.astro";
-
+import CaseStudyTop from "../components/CaseStudyTop.astro";
 import Newsletter from "../components/Newsletter.astro";
 import Button from "../components/Button.astro";
 import Label from "../components/Label.astro";
@@ -13,53 +13,8 @@ import Hero from "../components/Hero.astro";
 <BaseLayout title="Home">
   <Hero bgImage="taxesEfficiencyHero.png" label="Case studies single">Taxes & Efficiency</Hero>
 
-  <Container layout="content">
-    <p>
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde odio rerum
-      obcaecati illum. Possimus deserunt unde, alias aut cum debitis enim ipsa
-      architecto repellendus facilis?
-    </p>
-  </Container>
-
-  <Container layout="full-bleed" theme="yellow">
-    <h1>Welcome to AskExperts</h1>
-    <p>
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde odio rerum
-      obcaecati illum. Possimus deserunt unde, alias aut cum debitis enim ipsa
-      architecto repellendus facilis?
-    </p>
-  </Container>
-
-  <Container layout="content" theme="light">
-    <h1>Welcome to AskExperts</h1>
-    <p>
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde odio rerum
-      obcaecati illum. Possimus deserunt unde, alias aut cum debitis enim ipsa
-      architecto repellendus facilis?
-    </p>
-  </Container>
-
-  <Container layout="feature" theme="dark">
-    <h1>Welcome to AskExperts</h1>
-    <p>
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde odio rerum
-      obcaecati illum. Possimus deserunt unde, alias aut cum debitis enim ipsa
-      architecto repellendus facilis?
-    </p>
-  </Container>
-
-  <Container layout="content">
-    <Button theme="">Get Started Primary</Button>
-    <Button theme="secondary">Get Started Secondary</Button>
-    <Button theme="tertiary">Get Started Tertiary</Button>
-    <Label>Services</Label>
-    <Label color="yellow">Services</Label>
-    <Label color="green">Services</Label>
-    <Label color="white">Services</Label>
-  </Container>
-
+  <CaseStudyTop/>
 
   <Container layout="content">
     <Newsletter />
-  </Container>
 </BaseLayout>
