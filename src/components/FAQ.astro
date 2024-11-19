@@ -63,7 +63,6 @@ import Label from "./Label.astro";
     text-align: left;
     color: #595566;
     font-size: 16px;
-
   }
 
   summary {
@@ -73,6 +72,20 @@ import Label from "./Label.astro";
     cursor: pointer;
     margin-bottom: 27px;
     color: #181818;
+    position: relative;
+    list-style: none;
+  }
+
+  summary::after {
+    content: '+';
+    position: absolute;
+    right: 0;
+    font-size: 1.5rem;
+    color: #181818;
+  }
+
+  details[open] summary::after {
+    content: '-';
   }
 
   div {
