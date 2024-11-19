@@ -8,6 +8,7 @@ import OurVisionSection from "../components/OurVisionSection.astro";
 import Hero from "../components/Hero.astro";
 import Label from "../components/Label.astro";
 import CoreValuesSection from "../components/CoreValuesSection.astro";
+import FAQ from "../components/FAQ.astro";
 
 const employeeData = await fetch(
   "https://raw.githubusercontent.com/axwii/frontend-design/main/resources/json/employees.json"
@@ -33,6 +34,9 @@ const firstThreeEmployees = employeeData.slice(0, 3);
         satisfaction, respect for team.
       </p>
     <EmployeeSection data={firstThreeEmployees} />
+  </Container>
+  <Container>
+    <FAQ />
   </Container>
   <Container layout="content">
     <Newsletter />
