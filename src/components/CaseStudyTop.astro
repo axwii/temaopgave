@@ -42,6 +42,7 @@
     display: flex;
     flex-direction: column;
     margin-left: 30px;
+    flex: 1 1 100%; /* Allow items to grow and shrink, and take full width on small screens */
   }
 
   .label {
@@ -74,6 +75,20 @@
 
   .live-preview-button:hover {
     background-color: #e5af39;
+  }
+
+  @media (max-width: 768px) {
+    .info {
+      gap: 20px; /* Reduce gap on smaller screens */
+    }
+
+    .info-item {
+      margin-left: 0; /* Remove left margin on smaller screens */
+    }
+
+    .label {
+      font-size: 14px; /* Adjust font size on smaller screens */
+    }
   }
 </style>
 

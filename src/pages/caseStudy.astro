@@ -11,9 +11,7 @@ import Hero from "../components/Hero.astro";
 
 <BaseLayout title="Home">
   <Hero bgImage="taxesEfficiencyHero.png" label="Case studies single"
-    >Taxes & Efficiency</Hero
-  >
-
+    >Taxes & Efficiency</Hero>
   <CaseStudyTop />
 
   <div class="content">
@@ -83,6 +81,7 @@ import Hero from "../components/Hero.astro";
     </div>
   </div>
 
+
   <Container layout="content">
     <Newsletter />
   </Container>
@@ -91,7 +90,7 @@ import Hero from "../components/Hero.astro";
 <style>
   .content {
     margin: auto;
-    width: 800px;
+    max-width: 800px;
     p {
       margin: 25px 0 25px 0;
       font-size: 16px;
