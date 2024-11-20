@@ -35,13 +35,13 @@ const imagePath = (await images[img]()).default.src;
     <div class="employee-profile">
       <div class="profile-content">
         <FigureWithSquares
-        beforeTop="-14%"
-        beforeLeft="-14%"
-        afterTop="-5%"
-        afterLeft="-7%"
-        imgSrc={imagePath}
-        imgAlt={name}
-      />
+          beforeTop="-14%"
+          beforeLeft="-14%"
+          afterTop="-5%"
+          afterLeft="-7%"
+          imgSrc={imagePath}
+          imgAlt={name}
+        />
       </div>
       <div class="profile-details">
         <div class="employee-details">
@@ -53,7 +53,7 @@ const imagePath = (await images[img]()).default.src;
             <img src="src/icons/linked-in.svg" alt="linkedin" />
           </span>
         </div>
-        <p>{title}</p>
+        <p class="title">{title}</p>
         <p>
           Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
           dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
@@ -74,23 +74,19 @@ const imagePath = (await images[img]()).default.src;
         </p>
       </div>
     </div>
+  </Container>
+  <Container layout="content">
     <Newsletter />
   </Container>
 </BaseLayout>
 
 <style>
   @layer components {
-    /* article {
-      margin-top: 150px;
-    } */
-
     .employee-profile {
       display: grid;
       grid-template-rows: 1fr;
       grid-template-columns: repeat(7, 1fr);
-      gap: 0px;
-      /* width: 100%;
-      height: 100%; */
+      gap: 1rem;
     }
 
     .profile-details {
@@ -102,7 +98,20 @@ const imagePath = (await images[img]()).default.src;
       justify-self: start;
       align-self: start;
     }
-
+    h4 {
+      margin-bottom: 0.3rem;
+      font-weight: 700;
+    }
+    p {
+      font-size: 16px;
+      color: #595566;
+    }
+    .title {
+      color: #595566;
+      font-size: 20px;
+      margin-bottom: 0.5rem;
+      font-family: Cabin;
+    }
     .employee-details {
       display: grid;
       grid-template-columns: subgrid;
