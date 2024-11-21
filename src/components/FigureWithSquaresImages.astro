@@ -1,0 +1,27 @@
+---
+const { images } = Astro.props;
+---
+
+{images && images.length === 1 ? (
+  <img src={images[0].src} alt={images[0].alt} />
+) : images && images.length === 3 ? (
+  <div class="grid">
+    {images.map((image) => (
+      <img src={image.src} alt={image.alt} />
+    ))}
+  </div>
+) : null}
+
+<style>
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  img {
+    inline-size: 100%;
+    display: block;
+    border-radius: 20px;
+  }
+</style>

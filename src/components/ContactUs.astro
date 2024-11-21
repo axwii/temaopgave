@@ -2,6 +2,12 @@
 import Label from "./Label.astro";
 import FigureWithSquares from "./FigureWithSquares.astro";
 import ContactInfo from "./ContactInfo.astro";
+
+const imageList = [
+  { src: "src/assets/images/contactUs1.jpg", alt: "Contact Us" },
+  { src: "src/assets/images/contactUs2.jpg", alt: "Contact Us" },
+  { src: "src/assets/images/contactUs3.jpg", alt: "Contact Us" },
+];
 ---
 
 <div class="grid_1-1">
@@ -14,26 +20,26 @@ import ContactInfo from "./ContactInfo.astro";
       collaborative.
     </p>
     <div>
-      <ContactInfo 
-      iconSrc="src/icons/call.svg" 
-      altText="Call" 
-      title="Call Today" 
-      details="+1 800 100 900" 
-    />
-    
-    <ContactInfo 
-      iconSrc="src/icons/time.svg" 
-      altText="Time" 
-      title="Monday To Friday" 
-      details="9AM - 5PM" 
-    />
-    
-    <ContactInfo 
-      iconSrc="src/icons/Pin.svg" 
-      altText="Place" 
-      title="USA Office" 
-      details="195 Devonshire St Boston, MA 02110" 
-    />
+      <ContactInfo
+        iconSrc="src/icons/call.svg"
+        altText="Call"
+        title="Call Today"
+        details="+1 800 100 900"
+      />
+
+      <ContactInfo
+        iconSrc="src/icons/time.svg"
+        altText="Time"
+        title="Monday To Friday"
+        details="9AM - 5PM"
+      />
+
+      <ContactInfo
+        iconSrc="src/icons/Pin.svg"
+        altText="Place"
+        title="USA Office"
+        details="195 Devonshire St Boston, MA 02110"
+      />
     </div>
   </div>
   <FigureWithSquares
@@ -41,8 +47,7 @@ import ContactInfo from "./ContactInfo.astro";
     beforeRight="-14%"
     afterTop="85%"
     afterLeft="-6%"
-    imgSrc="src/assets/images/contactUs1.jpg"
-    imgAlt="Contact Us"
+    images={imageList}
   />
 </div>
 
