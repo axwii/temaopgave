@@ -7,37 +7,71 @@ const { id, text } = Astro.props;
 <div popover id={id} class="popover-content">
   <h2><slot /></h2>
   <form>
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required />
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" required />
-    <button type="submit">Login</button>
+    <div>
+    <input type="email" id="email" name="email" placeholder="Enter Email" required />
+  </div>
+  <div>
+    <input type="password" id="password" name="password" placeholder="Enter Password" required />
+  </div>
+  <div class="login">
+    <button class="popbutton" type="submit">Go to dashboard</button>
+  </div>
   </form>
 </div>
 
 <style>
+  form{
+    margin-top: 8px;
+  }
   .popover-content {
     color: #fff;
     background: #181818;
     border-radius: 30px;
+    text-align: center;
+    width: 450px;
+    height: 275px;
   }
+  h2{
+    font-size: 30px;
+    margin-top: 15px;
+  }
+  input {
+    border-radius: 20px;
+    background-color: #fff;
+    color: #181818;
+    font-family: "Lato", sans-serif;
+    font-style: normal;
+    line-height: 160%;
+    padding: 8px 16px;
+    margin: 15px 0px 5px 0px;
+  }
+input::placeholder{
+  font-size: 13px;
+}
 
   ::backdrop {
     background: #0004;
-    backdrop-filter: blur(4px);
+    backdrop-filter: blur(50%);
   }
 
-  button {
+  .popbutton {
+    border-radius: 20px;
+    background-color: #ffcc4a;
+    color: #181818;
+    font-family: "Lato", sans-serif;
+    font-style: bold;
+    line-height: 160%;
+    padding: 8px 36px;
+    margin-top: 15px;
+    font-size: 13px;
+  }
+  button{
     border-radius: 20px;
     background-color: #ffcc4a;
     color: #181818;
     font-family: "Lato", sans-serif;
     font-style: normal;
     line-height: 160%;
-    padding: 4px 16px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-self: center;
+    padding: 8px 16px;
   }
 </style>
