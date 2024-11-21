@@ -2,6 +2,10 @@
 // import "../styles/global.css"
 import Label from "./Label.astro";
 import FigureWithSquares from "./FigureWithSquares.astro";
+
+const imageList = [
+  { src: 'src/assets/images/whatToExpect.png', alt: 'What to expect' }
+];
 ---
 
 <div class="grid_1-1">
@@ -10,8 +14,7 @@ import FigureWithSquares from "./FigureWithSquares.astro";
     beforeLeft="-14%"
     afterTop="-5%"
     afterLeft="-6%"
-    imgSrc="src/assets/images/whatToExpect.png"
-    imgAlt="What to expect"
+    images={imageList}
   />
   <div class="flex">
     <Label>We'll work with you</Label>

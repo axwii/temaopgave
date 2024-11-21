@@ -1,6 +1,10 @@
 ---
 import Label from "../components/Label.astro";
 import FigureWithSquares from "./FigureWithSquares.astro";
+
+const imageList = [
+  { src: 'src/assets/images/ideasIntoReality.png', alt: 'Ideas Into Reality' }
+];
 ---
 <div class="grid_1-1">
   <Label class="" color="green">Our vison</Label>
@@ -27,8 +31,7 @@ import FigureWithSquares from "./FigureWithSquares.astro";
     beforeRight="-14%"
     afterTop="-5%"
     afterRight="-7%"
-    imgSrc="src/assets/images/ideasIntoReality.png"
-    imgAlt="Ideas Into Reality"
+    images={imageList}
   />
 </div>
 <ul class="graphic-list">

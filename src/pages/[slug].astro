@@ -28,6 +28,7 @@ if (!images[img]) {
 }
 
 const imagePath = (await images[img]()).default.src;
+const imageList = [{ src: imagePath, alt: name }];
 ---
 
 <BaseLayout title={slug}>
@@ -39,8 +40,7 @@ const imagePath = (await images[img]()).default.src;
           beforeLeft="-14%"
           afterTop="-5%"
           afterLeft="-7%"
-          imgSrc={imagePath}
-          imgAlt={name}
+          images={imageList}
         />
       </div>
       <div class="profile-details">
