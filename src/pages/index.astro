@@ -11,6 +11,7 @@ import WhatToExpect from "../components/WhatToExpect.astro";
 import CoreValuesSection from "../components/CoreValuesSection.astro";
 import FinancialProjections from "../components/FinancialProjections.astro";
 import ContactUs from "../components/ContactUs.astro";
+import Experience from "../components/Experience.astro";
 ---
 
 <BaseLayout title="Home">
@@ -25,9 +26,7 @@ import ContactUs from "../components/ContactUs.astro";
   </Container>
 
   <Container layout="full-bleed" theme="yellow" >
-    <Pie percent={84} />
-    <Pie percent={24} />
-    <Pie percent={97} />
+    <Experience />
   </Container>
 
   <Container layout="full-bleed" theme="dark">

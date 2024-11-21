@@ -1,0 +1,45 @@
+---
+import Pie from "./Pie.astro";
+import Label from "./Label.astro";
+---
+
+<div>
+  <article>
+    <Label color="white">Experience</Label>
+    <h2>More than 25 years of experience</h2>
+    <p>3000+ our clients are insured around the World</p>
+  </article>
+  <div class="pie-container">
+    <div class="pie-content">
+      <Pie percent={85} />
+      <p>Consistency</p>
+    </div>
+    <div class="pie-content">
+      <Pie percent={95} />
+      <p>Improvement</p>
+    </div>
+    <div class="pie-content">
+      <Pie percent={90} />
+      <p>Branching</p>
+    </div>
+  </div>
+</div>
+
+<style>
+  div {
+    display: flex;
+  }
+
+  .pie-container {
+    display: flex;
+    gap: 35px;
+  }
+
+  .pie-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+</style>
+
