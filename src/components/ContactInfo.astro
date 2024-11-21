@@ -1,0 +1,36 @@
+---
+const { iconSrc, altText, title, details } = Astro.props;
+---
+
+<article>
+  <img src={iconSrc} alt={altText} />
+  <div class="contactInfoText">
+      <p class="title">{title}</p>
+      <p class="details">{details}</p>
+  </div>
+</article>
+
+<style>
+  img {
+    width: 3.25rem;
+    height: 3.25rem;
+  }
+  .title {
+    color: #595566;
+    font-size: 16px;
+    line-height: 147.5%;
+  }
+  .details {
+    color: #181818;
+    font-family: Cabin;
+    font-weight: 600;
+  }
+  article {
+    display: flex;
+    gap: 16px;
+    margin-block: 3.5rem;
+  }
+  .contactInfoText {
+    flex-direction: column;
+  }
+</style>
