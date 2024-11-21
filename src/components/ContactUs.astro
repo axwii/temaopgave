@@ -1,6 +1,7 @@
 ---
 import Label from "./Label.astro";
 import FigureWithSquares from "./FigureWithSquares.astro";
+import ContactInfo from "./ContactInfo.astro";
 ---
 
 <div class="grid_1-1">
@@ -12,11 +13,33 @@ import FigureWithSquares from "./FigureWithSquares.astro";
       overviews. Iterative approaches to corporate strategy foster
       collaborative.
     </p>
+    <div>
+      <ContactInfo 
+      iconSrc="src/icons/call.svg" 
+      altText="Call" 
+      title="Call Today" 
+      details="+1 800 100 900" 
+    />
+    
+    <ContactInfo 
+      iconSrc="src/icons/time.svg" 
+      altText="Time" 
+      title="Monday To Friday" 
+      details="9AM - 5PM" 
+    />
+    
+    <ContactInfo 
+      iconSrc="src/icons/Pin.svg" 
+      altText="Place" 
+      title="USA Office" 
+      details="195 Devonshire St Boston, MA 02110" 
+    />
+    </div>
   </div>
   <FigureWithSquares
     beforeTop="-14%"
-    beforeLeft="-14%"
-    afterTop="-5%"
+    beforeRight="-14%"
+    afterTop="85%"
     afterLeft="-6%"
     imgSrc="src/assets/images/contactUs1.jpg"
     imgAlt="Contact Us"
