@@ -2,21 +2,32 @@
 const { images } = Astro.props;
 ---
 
-{images && images.length === 1 ? (
-  <img src={images[0].src} alt={images[0].alt} />
-) : images && images.length === 3 ? (
-  <div class="grid">
-    {images.map((image) => (
-      <img src={image.src} alt={image.alt} />
-    ))}
-  </div>
-) : null}
+{
+  images && images.length === 1 ? (
+    <img src={images[0].src} alt={images[0].alt} />
+  ) : images && images.length === 3 ? (
+    <div class="grid">
+      {images.map((image, index) => (
+        <img
+          src={image.src}
+          alt={image.alt}
+          class={index === 0 ? "first-image" : ""}
+        />
+      ))}
+    </div>
+  ) : null
+}
 
 <style>
   .grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
+  }
+
+  .first-image {
+    grid-row: span 2;
+    grid-column: 1;
   }
 
   img {
