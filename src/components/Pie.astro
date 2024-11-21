@@ -36,29 +36,30 @@ const { percent } = Astro.props;
     border-radius: 99px;
     display: grid;
     place-content: center;
-    
+
     &::before {
-        transition: --count 1.5s;
-        counter-reset: count var(--count);
-        content: counter(count) '%';
-        font-feature-settings: "tnum";
-        font-weight: 600;
-        font-size: 1.8rem;
-        line-height: 1;
+      transition: --count 1.5s;
+      counter-reset: count var(--count);
+      content: counter(count) "%";
+      font-feature-settings: "tnum";
+      font-weight: 600;
+      font-size: 2.2rem;
+      line-height: 1;
     }
 
     background:
-      linear-gradient(#fff, #fff) padding-box,
-      conic-gradient(red var(--bit-calc), blue 0) border-box;
+      linear-gradient(#ffcc4a, #ffcc4a) padding-box,
+      conic-gradient(#fff var(--bit-calc), #daae3c 0) border-box;
     position: relative;
     transition: --bit-calc 1.5s;
 
     .child {
-        position: absolute;
+      position: absolute;
       aspect-ratio: 1;
       border-radius: 99px;
+      border: solid 5px #fff;
       width: 20px;
-      background: red;
+      background: #181818;
       offset-path: border-box;
       offset-distance: var(--bit-calc);
       offset-anchor: 50% calc(50% - var(--offset-pos) / 2);
@@ -66,14 +67,16 @@ const { percent } = Astro.props;
   }
 </style>
 
-
 <script>
   const pieContainer = document.querySelector(":has(> .pies)");
 
-  const observer = new IntersectionObserver( 
-  ([e]) => (e.target as HTMLElement).style.setProperty("--bit", e.isIntersecting ? "1" : "0"),
-  { threshold: 1, rootMargin: "-200px 0px", }
-);
+  const observer = new IntersectionObserver(
+    ([e]) =>
+      (e.target as HTMLElement).style.setProperty(
+        "--bit",
+        e.isIntersecting ? "1" : "0"
+      ),
+    { threshold: 1, rootMargin: "-200px 0px" }
+  );
   observer.observe(pieContainer);
-
 </script>
