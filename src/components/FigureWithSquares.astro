@@ -5,9 +5,11 @@ const {
   beforeTop,
   beforeLeft,
   beforeRight,
+  beforeBottom,
   afterTop,
   afterLeft,
   afterRight,
+  afterBottom,
   images,
 } = Astro.props;
 ---
@@ -23,9 +25,11 @@ const {
     beforeTop,
     beforeLeft,
     beforeRight,
+    beforeBottom,
     afterTop,
     afterLeft,
     afterRight,
+    afterBottom,
   }}
 >
   figure {
@@ -45,6 +49,7 @@ const {
     top: var(--beforeTop);
     left: var(--beforeLeft);
     right: var(--beforeRight);
+    bottom: var(--beforeBottom);
     inline-size: calc(var(--_square-sum) - var(--_square-half));
     aspect-ratio: 1;
     background: linear-gradient(
@@ -69,6 +74,7 @@ const {
     top: var(--afterTop);
     left: var(--afterLeft);
     right: var(--afterRight);
+    bottom: var(--afterBottom);
     background: #4eaf4e;
     width: 150px;
     height: 150px;
