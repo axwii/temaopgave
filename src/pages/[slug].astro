@@ -20,11 +20,11 @@ const { myData } = Astro.props;
 const { name, title, img, slug } = myData;
 
 const images = import.meta.glob<{ default: ImageMetadata }>(
-  "/assets/images/*.{jpeg,jpg,png,gif}"
+  "/src/assets/images/*.{jpeg,jpg,png,gif}"
 );
 
 if (!images[img]) {
-  throw new Error(`"${img}" does not exist in glob: "assets/images/*.{jpeg,jpg,png,gif}"`);
+  throw new Error(`"${img}" does not exist in glob: "src/assets/images/*.{jpeg,jpg,png,gif}"`);
 }
 
 const imagePath = (await images[img]()).default.src;
