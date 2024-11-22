@@ -6,11 +6,11 @@ const { employee } = Astro.props;
 const { img, name, title, description, slug } = employee;
 
 const images = import.meta.glob<{ default: ImageMetadata }>(
-  "/assets/images/*.{jpeg,jpg,png,gif}"
+  "/src/assets/images/*.{jpeg,jpg,png,gif}"
 );
 if (!images[img])
   throw new Error(
-    `"${img}" does not exist in glob: "/assets/images/*.{jpeg,jpg,png,gif}"`
+    `"${img}" does not exist in glob: "src/assets/images/*.{jpeg,jpg,png,gif}"`
   );
 ---
 
