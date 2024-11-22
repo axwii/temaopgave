@@ -28,8 +28,6 @@
     overflow: clip;
     position: relative;
     isolation: isolate;
-    /* display: grid;
-    grid-template-columns: 1fr 1fr; */
     display: flex;
     flex-wrap: wrap;
   }
@@ -46,7 +44,8 @@
     font-family: "Lato", sans-serif;
     font-style: normal;
     line-height: 160%;
-    padding: 16px 36px;
+    padding: 14px 36px;
+    max-width: 90%;
   }
   .text {
     margin-left: 30px;
@@ -82,7 +81,6 @@
   div::before {
     --square-count: 12;
     --square-size: 1rem;
-
     --_square-size: var(--square-size, 1rem);
     --_square-half: calc(var(--square-size) / 2);
     --_square-sum: calc(var(--square-count) * var(--square-size));
@@ -128,5 +126,20 @@
     right: 2rem;
     rotate: -45deg;
     transform-origin: right top;
+  }
+
+  @media (max-width: 700px) {
+    .newsletter {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    form > * {
+      margin: 1rem 0;
+    }
+
+    .text, form{
+      margin: 1rem;
+    }
   }
 </style>
