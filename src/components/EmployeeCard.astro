@@ -6,11 +6,11 @@ const { employee } = Astro.props;
 const { img, name, title, description, slug } = employee;
 
 const images = import.meta.glob<{ default: ImageMetadata }>(
-  "/src/assets/images/*.{jpeg,jpg,png,gif}"
+  "/assets/images/*.{jpeg,jpg,png,gif}"
 );
 if (!images[img])
   throw new Error(
-    `"${img}" does not exist in glob: "src/assets/images/*.{jpeg,jpg,png,gif}"`
+    `"${img}" does not exist in glob: "/assets/images/*.{jpeg,jpg,png,gif}"`
   );
 ---
 
@@ -24,9 +24,9 @@ if (!images[img])
   <h2>{name}</h2>
   <p>{description}</p>
   <span class="icons">
-    <img src="src/icons/instagram.svg" alt="instagram" />
-    <img src="src/icons/facebook.svg" alt="facebook" />
-    <img src="src/icons/twitter.svg" alt="twitter" />
+    <img src="assets/icons/instagram.svg" alt="instagram" />
+    <img src="assets/icons/facebook.svg" alt="facebook" />
+    <img src="assets/icons/twitter.svg" alt="twitter" />
   </span>
 </div>
 

@@ -20,11 +20,11 @@ const { myData } = Astro.props;
 const { name, title, img, slug } = myData;
 
 const images = import.meta.glob<{ default: ImageMetadata }>(
-  "/src/assets/images/*.{jpeg,jpg,png,gif}"
+  "/assets/images/*.{jpeg,jpg,png,gif}"
 );
 
 if (!images[img]) {
-  throw new Error(`"${img}" does not exist in glob: "src/assets/images/*.{jpeg,jpg,png,gif}"`);
+  throw new Error(`"${img}" does not exist in glob: "assets/images/*.{jpeg,jpg,png,gif}"`);
 }
 
 const imagePath = (await images[img]()).default.src;
@@ -47,10 +47,10 @@ const imageList = [{ src: imagePath, alt: name }];
         <div class="employee-details">
           <h4 class="profile-content">{name}</h4>
           <span class="icons profile-details">
-            <img src="src/icons/instagram.svg" alt="instagram" />
-            <img src="src/icons/facebook.svg" alt="facebook" />
-            <img src="src/icons/twitter.svg" alt="twitter" />
-            <img src="src/icons/linked-in.svg" alt="linkedin" />
+            <img src="assets/icons/instagram.svg" alt="instagram" />
+            <img src="assets/icons/facebook.svg" alt="facebook" />
+            <img src="assets/icons/twitter.svg" alt="twitter" />
+            <img src="assets/icons/linked-in.svg" alt="linkedin" />
           </span>
         </div>
         <p class="title">{title}</p>
