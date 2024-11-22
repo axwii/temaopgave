@@ -1,5 +1,30 @@
 ---
+import Button from "./Button.astro";
 ---
+
+<div class="container">
+  <!-- Background Image -->
+  <img src="src/assets/images/caseName.png" alt="" class="image" />
+
+  <!-- Black Box Overlay -->
+  <div class="black-box">
+    <div class="info">
+      <div class="info-item">
+        <p class="label">Case Name</p>
+        <p class="value">Taxes & Efficiency</p>
+      </div>
+      <div class="info-item">
+        <p class="label">Category</p>
+        <p class="value">Business</p>
+      </div>
+      <div class="info-item">
+        <p class="label">Date</p>
+        <p class="value">27th September 2022</p>
+      </div>
+    </div>
+    <Button theme="secondary">Live Preview</Button>
+  </div>
+</div>
 
 <style>
   .container {
@@ -57,11 +82,6 @@
     margin: 0;
   }
 
-  .button-container {
-    display: flex;
-    align-items: center;
-  }
-
   .live-preview-button {
     background-color: #f6c442;
     color: black;
@@ -91,29 +111,3 @@
     }
   }
 </style>
-
-<div class="container">
-  <!-- Background Image -->
-  <img src="src/assets/images/caseName.png" alt="" class="image" />
-
-  <!-- Black Box Overlay -->
-  <div class="black-box">
-    <div class="info">
-      <div class="info-item">
-        <p class="label">Case Name</p>
-        <p class="value">Taxes & Efficiency</p>
-      </div>
-      <div class="info-item">
-        <p class="label">Category</p>
-        <p class="value">Business</p>
-      </div>
-      <div class="info-item">
-        <p class="label">Date</p>
-        <p class="value">27th September 2022</p>
-      </div>
-    </div>
-    <div class="button-container">
-      <button class="live-preview-button">Live Preview</button>
-    </div>
-  </div>
-</div>
