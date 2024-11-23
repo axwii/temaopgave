@@ -7,6 +7,10 @@ import Newsletter from "../components/Newsletter.astro";
 import Button from "../components/Button.astro";
 import Label from "../components/Label.astro";
 import Hero from "../components/Hero.astro";
+
+//test of image import
+import Image from "astro/components/Image.astro";
+import storyboard from "/src/assets/images/maya.jpg";
 ---
 
 <BaseLayout title="Home">
@@ -61,7 +65,15 @@ import Hero from "../components/Hero.astro";
         scalable customer service.
       </p>
     </div>
-    <img src="assets/images/storyboard.png" alt="" />
+    <img src="/public/assets/images/storyboard.png" alt="test 1" />
+    <img src="public/assets/images/storyboard.png" alt="test 2" />
+    <img src="../assets/images/storyboard.png" alt="test 3" />
+    <img src="/assets/images/storyboard.png" alt="test 4" />
+    <img src="assets/images/storyboard.png" alt="test 4.5" />
+    <img src="/src/assets/images/maya.jpg" alt="test 5" />
+    <img src="src/assets/images/maya.jpg" alt="test 6" />
+    <img src="/images/maya.jpg" alt="test 7" />
+    <Image src={storyboard} alt="test 8" />
     <div>
       <h5>Project result</h5>
       <p>
