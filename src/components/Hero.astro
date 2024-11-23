@@ -1,9 +1,17 @@
 ---
 import Label from "./Label.astro";
+import type { ImageMetadata } from "astro";
+
 const { bgImage, label } = Astro.props;
 
-const importedImage = `assets/images/${bgImage}`;
+const images = import.meta.glob<{ default: ImageMetadata }>('../assets/images/*.{jpeg,jpg,png,gif}');
+const imageKey = `../assets/images/${bgImage}`;
 
+if (!images[imageKey]) {
+  throw new Error(`"${bgImage}" does not exist in glob: "../assets/images/*.{jpeg,jpg,png,gif}"`);
+}
+
+const importedImage = (await images[imageKey]()).default.src;
 ---
 
 <section style={`background-image: url(${importedImage});`}>
