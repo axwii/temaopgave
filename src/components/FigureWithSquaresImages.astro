@@ -1,17 +1,19 @@
 ---
+import { Image } from "astro:assets";
 const { images } = Astro.props;
 ---
 
 {
   images && images.length === 1 ? (
-    <img src={images[0].src} alt={images[0].alt} />
+    <Image src={images[0].src} alt={images[0].alt} width={500} height={500}/>
   ) : images && images.length === 3 ? (
     <div class="grid">
       {images.map((image, index) => (
-        <img
+        <Image
           src={image.src}
           alt={image.alt}
           class={index === 0 ? "first-image" : ""}
+          width={500} height={500}
         />
       ))}
     </div>
