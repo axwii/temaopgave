@@ -1,14 +1,15 @@
 ---
-
+import { Image } from "astro:assets";
+import financialProjectionsIcon from '../assets/icons/financialprojections.svg';
+import sheetIcon from '../assets/icons/sheet.svg';
+import cardIcon from '../assets/icons/card.svg';
+import bankIcon from '../assets/icons/bank.svg';
+import moneyIcon from '../assets/icons/money.svg';
 ---
 
 <section class="full">
   <header>
-    <img
-      class="financialProjectionsIcon"
-      src="assets/icons/financialprojections.svg "
-      alt="Financial Projections Icon"
-    />
+    <Image src={financialProjectionsIcon} alt="Financial Projections Icon" class="financialProjectionsIcon" />
     <h2>Financial Projections</h2>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -20,11 +21,7 @@
 
   <ul role="list">
     <li>
-      <img
-        class="sheetIcon"
-        src="assets/icons/sheet.svg "
-        alt="The Balance Sheet Icon"
-      />
+      <Image src={sheetIcon} alt="The Balance Sheet Icon" class="sheetIcon" />
       <h3>The Balance Sheet</h3>
       <p>
         The Balance Sheet is a summary of the assets and liabilities and equity
@@ -33,11 +30,7 @@
     </li>
 
     <li>
-      <img
-        class="cardIcon"
-        src="assets/icons/card.svg "
-        alt="Income Statement Icon"
-      />
+      <Image src={cardIcon} alt="Income Statement Icon" class="cardIcon" />
       <h3>Income Statement</h3>
       <p>
         The Income (Profit and Loss) Statement, commonly referred to as the P&L
@@ -47,11 +40,7 @@
     </li>
 
     <li>
-      <img
-        class="bankIcon"
-        src="assets/icons/bank.svg "
-        alt="Financial Plan Icon"
-      />
+      <Image src={bankIcon} alt="Financial Plan Icon" class="bankIcon" />
       <h3>Financial Plan</h3>
       <p>
         Keep your information current and review the documents on a regular
@@ -61,11 +50,7 @@
     </li>
 
     <li>
-      <img
-        class="moneyIcon"
-        src="assets/icons/money.svg "
-        alt="Financial Ratios Icon"
-      />
+      <Image src={moneyIcon} alt="Financial Ratios Icon" class="moneyIcon" />
       <h3>Financial Ratios</h3>
       <p>
         Ratios are useful when comparing your company with the competition on
