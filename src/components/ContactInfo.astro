@@ -1,9 +1,22 @@
 ---
-const { iconSrc, altText, title, details } = Astro.props;
+import { Image } from "astro:assets";
+import callIcon from '../assets/icons/call.svg';
+import timeIcon from '../assets/icons/time.svg';
+import pinIcon from '../assets/icons/pin.svg';
+
+const { icon, altText, title, details } = Astro.props;
+
+const icons = {
+  'call': callIcon,
+  'time': timeIcon,
+  'pin': pinIcon,
+};
+
+const iconSrc = icons[icon];
 ---
 
 <article>
-  <img src={iconSrc} alt={altText} />
+  <Image src={iconSrc} alt={altText} />
   <div class="contactInfoText">
       <p class="title">{title}</p>
       <p class="details">{details}</p>
