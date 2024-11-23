@@ -4,18 +4,12 @@ import EmployeeCard from "./EmployeeCard.astro";
 const { data } = Astro.props;
 ---
 
-<section class="grid-container">
+<section>
   {data.map((employee) => <EmployeeCard {employee} />)}
 </section>
 
 <style>
   @layer components {
-    .grid-container {
-      /* --gap: clamp(1rem, 6vw, 3rem); */
-      /* width: min(calc(100% - var(--gap) * 2), 1200px); */
-      /* margin: 0 auto; Center the container */
-    }
-
     section {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));

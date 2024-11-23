@@ -1,6 +1,9 @@
 ---
 import type { ImageMetadata } from "astro";
 import { Image } from "astro:assets";
+import instagramIcon from "../assets/icons/instagram.svg";
+import facebookIcon from "../assets/icons/facebook.svg";
+import twitterIcon from "../assets/icons/twitter.svg";
 
 const { employee } = Astro.props;
 const { img, name, title, description, slug } = employee;
@@ -24,9 +27,9 @@ if (!images[img])
   <h2>{name}</h2>
   <p>{description}</p>
   <span class="icons">
-    <img src="assets/icons/instagram.svg" alt="instagram" />
-    <img src="assets/icons/facebook.svg" alt="facebook" />
-    <img src="assets/icons/twitter.svg" alt="twitter" />
+    <Image src={instagramIcon} alt="instagram" />
+    <Image src={facebookIcon} alt="facebook" />
+    <Image src={twitterIcon} alt="twitter" />
   </span>
 </div>
 
