@@ -2,17 +2,16 @@
 import Label from "../components/Label.astro";
 import FigureWithSquares from "./FigureWithSquares.astro";
 
-const imageList = [
-  { src: '../assets/images/ideasIntoReality.png', alt: 'Ideas Into Reality' }
-];
-
-
-// import { getImage } from "astro:assets";
-// import whatToExpectImageFromAstro from '../assets/images/whatToExpect.png';
-// const whatToExpectImage = await getImage({ src: whatToExpectImageFromAstro });
 // const imageList = [
-//   { src: whatToExpectImage.src, alt: 'What to expect' }
+//   { src: '../assets/images/ideasIntoReality.png', alt: 'Ideas Into Reality' }
 // ];
+
+import { getImage } from "astro:assets";
+import ideasIntoRealityFromAstro from '../assets/images/ideasIntoReality.png';
+const ideasIntoReality = await getImage({ src: ideasIntoRealityFromAstro });
+const imageList = [
+  { src: ideasIntoReality.src, alt: 'Ideas Into Reality' }
+];
 ---
 <div class="grid_1-1">
   <Label class="" color="green">Our vison</Label>
