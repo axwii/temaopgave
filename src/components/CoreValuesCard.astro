@@ -1,9 +1,24 @@
 ---
+import Image from "astro/components/Image.astro";
+import stackIcon from '../assets/icons/stack.svg';
+import barChartIcon from '../assets/icons/bar-chart.svg';
+import globeIcon from '../assets/icons/globe.svg';
+import cogIcon from '../assets/icons/cog.svg';
+
 const { title, icon } = Astro.props;
+
+const icons = {
+  'stack': stackIcon,
+  'bar-chart': barChartIcon,
+  'globe': globeIcon,
+  'cog': cogIcon
+};
+
+const iconSrc = icons[icon];
 ---
 
 <li>
-  <img src={icon} alt="" />
+  <Image src={iconSrc} alt="" width={50} height={50} />
   <p>{title}</p>
   <p>
     <slot />
