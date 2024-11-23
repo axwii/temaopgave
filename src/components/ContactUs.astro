@@ -3,10 +3,17 @@ import Label from "./Label.astro";
 import FigureWithSquares from "./FigureWithSquares.astro";
 import ContactInfo from "./ContactInfo.astro";
 
+import { getImage } from "astro:assets";
+import contactUs1FromAstro from '../assets/images/contactUs1.jpg';
+import contactUs2FromAstro from '../assets/images/contactUs2.jpg';
+import contactUs3FromAstro from '../assets/images/contactUs3.jpg';
+const contactUs1Image = await getImage({ src: contactUs1FromAstro });
+const contactUs2Image = await getImage({ src: contactUs2FromAstro });
+const contactUs3Image = await getImage({ src: contactUs3FromAstro });
 const imageList = [
-  { src: "src/assets/images/contactUs1.jpg", alt: "Contact Us" },
-  { src: "src/assets/images/contactUs2.jpg", alt: "Contact Us" },
-  { src: "src/assets/images/contactUs3.jpg", alt: "Contact Us" },
+  { src: contactUs1Image.src, alt: 'Contact Us' },
+  { src: contactUs2Image.src, alt: 'Contact Us' },
+  { src: contactUs3Image.src, alt: 'Contact Us' }
 ];
 ---
 

@@ -1,11 +1,6 @@
 ---
 import Label from "../components/Label.astro";
 import FigureWithSquares from "./FigureWithSquares.astro";
-
-// const imageList = [
-//   { src: '../assets/images/ideasIntoReality.png', alt: 'Ideas Into Reality' }
-// ];
-
 import { getImage } from "astro:assets";
 import ideasIntoRealityFromAstro from '../assets/images/ideasIntoReality.png';
 const ideasIntoReality = await getImage({ src: ideasIntoRealityFromAstro });
