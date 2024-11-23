@@ -1,12 +1,7 @@
 ---
 import Label from "./Label.astro";
 import FigureWithSquares from "./FigureWithSquares.astro";
-import { Image } from "astro:assets";
 import { getImage } from "astro:assets";
-// import testImage from '../assets/images/storyboard.png';
-// const test = await getImage({ src: testImage });
-
-// Compare this snippet from src/components/WhatToExpect.astro:
 import whatToExpectImageFromAstro from '../assets/images/whatToExpect.png';
 const whatToExpectImage = await getImage({ src: whatToExpectImageFromAstro });
 const imageList = [
@@ -22,7 +17,6 @@ const imageList = [
     afterLeft="-6%"
     images={imageList}
   />
-  <!-- <Image src={test.src} alt="test" width={500} height={500} /> -->
   <div class="flex">
     <Label>We'll work with you</Label>
     <h1>What To Expect</h1>
