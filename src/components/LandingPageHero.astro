@@ -26,7 +26,7 @@ import LandingPageHeroCard from "../components/LandingPageHeroCard.astro";
   </header>
 </section>
 
-<article>
+<article class="hero-card-grid">
   <LandingPageHeroCard
     title="Finance & Restructuring"
     text="Get help from Alex Moore, a professional business coach with advanced experience on growth and business scaling."
@@ -45,6 +45,14 @@ import LandingPageHeroCard from "../components/LandingPageHeroCard.astro";
 </article>
 
 <style>
+  .hero-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    position: relative;
+    top: -9rem;
+  }
+
   section {
     grid-column: full;
     background-size: cover;
