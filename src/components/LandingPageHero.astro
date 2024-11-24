@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import sarahFromAstro from "../assets/images/sarah.jpg";
 import Button from "./Button.astro";
+import LandingPageHeroCard from "../components/LandingPageHeroCard.astro";
 ---
 
 <section>
@@ -25,6 +26,12 @@ import Button from "./Button.astro";
   </header>
 </section>
 
+<LandingPageHeroCard
+  title="Finance & Restructuring"
+  text="Get help from Alex Moore, a professional business coach with advanced experience on growth and business scaling."
+  buttonText="Book a Meeting"
+/>
+
 <style>
   section {
     grid-column: full;
@@ -44,8 +51,8 @@ import Button from "./Button.astro";
     * {
       margin: 1rem;
     }
-    h1{
-        font-weight: 700;
+    h1 {
+      font-weight: 700;
     }
     Button {
       margin-top: 1.5rem;
