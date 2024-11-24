@@ -35,10 +35,16 @@ import LandingPageHeroCard from "../components/LandingPageHeroCard.astro";
 <style>
   section {
     grid-column: full;
-    display: grid;
     background-size: cover;
     background-color: #181818;
     color: #fff;
+    display: grid;
+    grid: auto / subgrid;
+    background-size: cover;
+    background-position: 50% 40%;
+    > * {
+      grid-column: content;
+    }
   }
 
   .headerContent {
@@ -49,6 +55,7 @@ import LandingPageHeroCard from "../components/LandingPageHeroCard.astro";
       margin: 1rem;
     }
     h1 {
+      font-size: 50px;
       font-weight: 700;
     }
     Button {
@@ -60,7 +67,6 @@ import LandingPageHeroCard from "../components/LandingPageHeroCard.astro";
     display: grid;
     grid-template-columns: 1fr;
     gap: 2rem;
-    /* margin: 3rem 0; */
   }
 
   @media (min-width: 800px) {
@@ -68,5 +74,4 @@ import LandingPageHeroCard from "../components/LandingPageHeroCard.astro";
       grid-template-columns: 1fr 1fr;
     }
   }
-
 </style>
