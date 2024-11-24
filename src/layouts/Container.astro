@@ -5,20 +5,11 @@ const { padding = "initial", layout = "full-bleed", theme } = Astro.props;
 <section data-layout={layout} data-theme={theme} style=`--padding: ${padding}`>
   <slot />
 </section>
-<!-- <section data-layout={"full-bleed"} data-theme={theme}>
-  <div data-layout={layout} style=`--padding: ${padding}`>
-    <slot />
-  </div>
-</section> -->
 
 <style>
   @layer components {
     section {
-      /*Delete! */
       padding-block: var(--padding, 3rem);
-
-      outline: 2px solid red;
-      outline-offset: -2px;
       background: var(--bg-section, #fff);
       color: var(--text-section, #181818);
       h1,h2,h3,h4,h5,h6 {
