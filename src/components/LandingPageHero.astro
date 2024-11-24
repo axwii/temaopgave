@@ -1,8 +1,73 @@
 ---
-
+import { Image } from "astro:assets";
+import sarahFromAstro from "../assets/images/sarah.jpg";
+import Button from "./Button.astro";
 ---
 
+<section>
+  <header class="grid_1-1">
+    <div class="headerContent">
+      <h1>Adam Buschemia Business Consultant</h1>
+      <p>
+        Get help from Alex Moore, a professional business coach with advanced
+        experience on growth and business scaling.
+      </p>
+      <Button theme="tertiary">Book a Meeting</Button>
+    </div>
+    <figure>
+      <Image
+        src={sarahFromAstro}
+        alt="Adam Buschemia"
+        width={500}
+        height={500}
+      />
+    </figure>
+  </header>
+</section>
+
 <style>
+  section {
+    grid-column: full;
+    display: grid;
+    background-size: cover;
+    background-color: #181818;
+    color: #fff;
+    /* * {
+        grid-column: content;
+    } */
+  }
 
+  .headerContent {
+    display: block;
+    align-content: center;
+    margin-bottom: 20%;
+    * {
+      margin: 1rem;
+    }
+    h1{
+        font-weight: 700;
+    }
+    Button {
+      margin-top: 1.5rem;
+    }
+  }
 
+  .grid_1-1 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    /* margin: 3rem 0; */
+  }
+
+  @media (min-width: 800px) {
+    .grid_1-1 {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .flex {
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+  }
 </style>
